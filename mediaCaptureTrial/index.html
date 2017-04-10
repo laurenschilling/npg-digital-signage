@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,600" rel="stylesheet">
+    <title>Media Capture Trial</title>
+</head>
+
+<body>
+
+    <!-- From https://www.sitepoint.com/introduction-getusermedia-api/ -->
+    <section id="main">
+        <h1>getUserMedia Test</h1>
+        <span id="unsupported" class="api-support hidden">API not supported</span>
+        <img id="portrait" src="npgPortrait.jpg"><video id="video" autoplay></video><img id="snapshot" src="">
+        <canvas></canvas>
+        <div class="buttons-wrapper">
+            <button id="button-play" class="button">Start</button>
+            <button id="button-stop" class="button">Capture Image</button>
+        </div>
+        <span id="unsupported" class="hidden">API not supported</span>
+        <div>Blur: <input id="filterBlur" type="range" value="0" step="1" min="0" max="10" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Brightness: <input id="filterBrightness" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Contrast: <input id="filterContrast" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Grayscale: <input id="filterGrayscale" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Hue: <input id="filterHue" type="range" value="0" step="1" min="0" max="360" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Invert: <input id="filterInvert" type="range" value="0" step="20" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Opacity: <input id="filterOpacity" type="range" value="100" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Saturate: <input id="filterSaturate" type="range" value="100" step="1" min="0" max="200" oninput="changeValue()" onchange="changeValue()" /></div>
+        <div>Sepia: <input id="filterSepia" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+
+    </section>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
