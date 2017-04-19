@@ -191,3 +191,9 @@ section {
 
 footer {
 	padding: 3% 0; }
+	
+ /* TEST- making text visiable over image on click - bonney 19/4 */
+    a img { border: none; }
+	.caption { visibility: hidden; }
+	.caption:target { visibility: visible; }
+ 
