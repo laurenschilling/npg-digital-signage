@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Basic Page Needs
+	––––––––––––––––––––––––----------–––––––––––––––- -->
+	<meta charset="utf-8">
+	<title>Match the Pose</title>
+	<meta name="description" content="Portrait Play at the National Portrait Gallery of Australia">
+	<meta name="author" content="Site by Bonney Rowe, Caitlin Willington, Kate Newbown and Lauren Schilling">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS for Skeleton
+	––––––––––––––––––––––––----------–––––––––––––––- -->
+	<link rel="stylesheet" href="stylesheets/normalize.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+
+	<!-- CSS
+	––––––––––––––––––––––––----------–––––––––––––––- -->
+ 	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="assets/npg-favicon2.png">
+
+	<!-- Typeface
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="https://use.typekit.net/ltf5cnq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+</head>
+
+<body>
+
+
+	<!-- .container is main centered wrapper -->
+	<div class="container">
+
+		<!-- Section Name -->
+		<section>
+
+			<!-- columns should be the immediate child of a .row -->
+			<div class="row">
+				<div class="ten columns">
+					<!-- blank -->
+				</div>
+				<div class="six columns">
+					<!-- help button -->
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns">
+					<!-- logo -->
+					<h1 id="logo">Portrait Play at the National Portrait Gallery</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns">
+					<h3 class="subtitle">Gallery 2 | Contemporary Gallery</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns">
+					<h2 class="title">Match the Pose</h2>
+				</div>
+			</div>
+
+		</section>
+
+		<section id="MatchThePose">
+
+			<img id="selectedPortrait" src="" />
+
+			<!-- Pose camera -->
+			<div id="squarePose">
+				<video id="poseVideo" autoplay></video>
+				<img id="poseImage" src="" />
+			</div>
+			<canvas id="canvas"></canvas> <!-- 'Never displayed, just used to capture video and create .jpg -->
+
+			<!-- Pose buttons -->
+			<div class="poseButtons">
+					<button id="poseButtonCapture" class="button">Capture Image</button>
+			</div>
+
+			<!-- Pose filters -->
+			<div>Blur: <input id="filterBlur" type="range" value="0" step="1" min="0" max="10" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Brightness: <input id="filterBrightness" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Contrast: <input id="filterContrast" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Grayscale: <input id="filterGrayscale" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Hue: <input id="filterHue" type="range" value="0" step="1" min="0" max="360" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Invert: <input id="filterInvert" type="range" value="0" step="20" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Opacity: <input id="filterOpacity" type="range" value="100" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Saturate: <input id="filterSaturate" type="range" value="100" step="1" min="0" max="200" oninput="changeValue()" onchange="changeValue()" /></div>
+			<div>Sepia: <input id="filterSepia" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" /></div>
+
+		</section> <!-- end #MatchThePose -->
+
+		<!-- Footer -->
+		<footer>
+			<div class="ten columns">
+				<!-- blank-->
+			</div>
+			<div class="twelve columns">
+				<!-- next button -->
+				<a class="button" id="shareButton" href="#">Share</a>
+			</div>
+		</footer>
+
+	</div> <!-- end .container -->
+
+	<script src="scripts/scripts.js"></script>
+
+</body>
+</html>
