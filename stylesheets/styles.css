@@ -7,7 +7,8 @@
 - Typography
 - Hero Slider
 - Sections
-- Page specific Styles: Match the Pose
+		- Section: Gallery
+		- Section: Match the Pose
 
 */
 
@@ -193,40 +194,42 @@ section {
 footer {
 	padding: 3% 0; }
 
-	
- /* TEST- making text visiable over image on click - bonney 19/4 */
-    a img { border: none; }
-	.caption { visibility: hidden; }
-	.caption:target { visibility: visible; }
- 
-=======
 
+/* Section: Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	/* Page specific Styles: Match the Pose
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* TEST- making text visiable over image on click - bonney 19/4 */
+	 a img { border: none; }
+ .caption { visibility: hidden; }
+ .caption:target { visibility: visible; }
 
-	canvas {
-	  display: none;
-	}
-	#selectedPortrait {
-	  display: inline;
-	  width: 47.5%;
-	  margin-bottom: 30px;
-	}
-	#squarePose {
-	  width: 47.5%;
-	  float: right;
-	  overflow: hidden;
-	}
-	    #poseVideo {
-	      margin-left: -25%;
-	      height: 100%;
-	    }
-	    #poseImage {
-	      margin-left: -25%;
-	      display: none;
-	    }
-	#shareButton {
-	  display: none;
-	}
+/* Section: Match the Pose
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+canvas {
+  display: none;
+}
+#artContainer {
+  display: inline;
+	width: 100%;
+	margin-bottom: 30px;
+}
+#squarePose {
+  width: 47.5%;
+  float: right;
+  overflow: hidden;
+}
+    #poseVideo {
+      margin-left: -25%;
+      height: 100%;
+    }
+    #poseImage {
+      margin-left: -25%;
+      display: none;
+    }
+#shareButton {
+  display: none;
+}
+#filters {
+	display: none;
+}

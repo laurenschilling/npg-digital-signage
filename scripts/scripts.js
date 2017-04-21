@@ -1,3 +1,21 @@
+///////////////////////////////////////////////////////
+// Page 2 "Pick a Portrait"
+///////////////////////////////////////////////////////
+
+// Select portrait to use
+$('.art').on('click', function(){
+    // Visually highlight the selection and restore previous selection to normal
+    $('.art').css('filter', 'brightness(100%)');
+    $(this).css('filter', 'brightness(25%)');
+    // Store selection
+    localStorage.selection = this.id;
+});
+
+
+///////////////////////////////////////////////////////
+// Page 3 "Match the pose"
+///////////////////////////////////////////////////////
+
 // Use Firefox-specific prefix for getUserMedia
 navigator.getUserMedia = navigator.mozGetUserMedia;
 
@@ -5,10 +23,13 @@ var video = document.getElementById('poseVideo');
 var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
 
 window.onload = function(){
+    // Load selected portrait from local storage
+    var selectedArtPath = "images/crop/" + localStorage.selection + ".jpg";
+    $("#artContainer").prepend("<img id='artContainer' src=' " + selectedArtPath + "' />")
     // Make portrait and pose images square
     // Width is set by css and then height is set here to equal that width
-    var squareSide = document.getElementById("selectedPortrait").offsetWidth;
-    document.getElementById("selectedPortrait").style.height = squareSide + "px";
+    var squareSide = document.getElementById("artContainer").offsetWidth;
+    document.getElementById("artContainer").style.height = squareSide + "px";
     document.getElementById("squarePose").style.height = squareSide + "px";
     // Capture user's video source
     navigator.getUserMedia({
@@ -35,7 +56,7 @@ document.getElementById('poseButtonCapture').addEventListener('click', function(
   var videoWidth = video.offsetWidth;
   var videoHeight = video.offsetHeight;
   var ctx = canvas.getContext('2d');
-  // Can't set canvas width/height with css
+  // set canvas width/height (Can't do this with css)
   canvas.width = videoWidth;
   canvas.height = videoHeight;
   ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
@@ -44,6 +65,11 @@ document.getElementById('poseButtonCapture').addEventListener('click', function(
   document.getElementById("poseImage").style.display = "block";
   // hide video
   document.getElementById("poseVideo").style.display = "none";
+  // hide capture button
+  $('#poseButtonCapture').css('display', 'none');
+  // show filters + share button
+  $('#filters').css('display', 'block');
+  $('#shareButton').css('display', 'block');
 });
 
 //Apply filters
