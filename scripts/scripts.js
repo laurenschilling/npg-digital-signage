@@ -1,3 +1,8 @@
+// Back button
+$('.backButton').on('click', function(){
+    localStorage.clear();
+});
+
 ///////////////////////////////////////////////////////
 // Page 2 "Pick a Portrait"
 ///////////////////////////////////////////////////////
@@ -7,10 +12,23 @@ $('.art').on('click', function(){
     // Visually highlight the selection and restore previous selection to normal
     $('.art').css('filter', 'brightness(100%)');
     $(this).css('filter', 'brightness(25%)');
+    // visually indicate that 'next' button can be clicked
+    $('#selectPortraitButton').css('background-color', '#b42b33');
+    $('#selectPortraitButton').css('color', '#fff');
+    $('#selectPortraitButton').css('cursor', 'pointer');
     // Store selection
     localStorage.selection = this.id;
 });
 
+// Do not let user progress to Page 3 before they make a portrait selection
+$('#selectPortraitButton').on('click', function(){
+  if (localStorage.selection == undefined) {
+    alert("Please click on a portrait to select it");
+    return false;
+  } else {
+    return true;
+  }
+});
 
 ///////////////////////////////////////////////////////
 // Page 3 "Match the pose"

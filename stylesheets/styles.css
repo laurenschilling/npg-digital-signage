@@ -203,6 +203,12 @@ footer {
 
 /* Section: Gallery
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#selectPortraitButton {
+	background-color: #777;
+	color: #999;
+	cursor: default;
+}
+
 
 /* TEST- making text visiable over image on click - bonney 19/4 */
 	 a img { border: none; }
