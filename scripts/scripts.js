@@ -67,13 +67,15 @@ document.getElementById('poseButtonCapture').addEventListener('click', function(
   canvas.height = video.offsetHeight;
   ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height);
   $('#poseImage').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
-  // hide video + capture button
+  // hide video + capture button + screen 3 content
   $('#poseVideo').css('display', 'none');
   $('#poseButtonCapture').css('display', 'none');
-  // Show image + filter buttons + share button
+  $('#contentScreen3').css('display', 'none');
+  // Show image + filter buttons + share button + screen 4 content
   $('#poseImage').css('display', 'block');
   $('.filterButton').css('display', 'block');
   $('#shareButton').css('display', 'block');
+  $('#contentScreen4').css('display', 'block');
 });
 
 // Display filter range selector when filter button is pushed
