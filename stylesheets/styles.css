@@ -224,7 +224,6 @@ canvas {
 #artContainer {
   display: inline;
 	width: 100%;
-	margin-bottom: 30px;
 }
 #squarePose {
   width: 47.5%;
@@ -239,9 +238,39 @@ canvas {
       margin-left: -25%;
       display: none;
     }
+		#filterButtons {
+		}
+				.filterButton {
+					float: right;
+					width: 14.15%;
+					height: 50px;
+					line-height: 50px;
+					background-color: rgba(0, 0, 0, 0.5);
+					text-align: center;
+					cursor: pointer;
+					display: none;
+				}
 #shareButton {
   display: none;
 }
 #filters {
-	display: none;
 }
+		.filterRange {
+			text-align: center;
+			font-size: 2em;
+			display: none;
+		}
+		input[type=range] {
+			width: 100%;
+		}
+		input[type=range]::-moz-range-track {
+		  height: 1px;
+		  background: #fff;
+		}
+		input[type=range]::-moz-range-thumb {
+			border: 1px solid #fff;
+			border-radius: 0;
+			height: 20px;
+		  width: 20px;
+		  background: #b42b33;
+		}
