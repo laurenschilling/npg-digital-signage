@@ -58,13 +58,25 @@
 				<div class="twelve columns">
 					<!-- space for hero image/ possible sequence-->
 					<!-- this is a work in progress! -lauren -->
-					<ul id="hero-slider">
+					
+					<!--<ul id="hero-slider">
 						<li id="hero1"></li><!--
-						--><li id="hero2"></li><!--
-						--><li id="hero3"></li><!--
-						--><li id="hero4"></li><!--
-						--><li id="hero5"></li><!-- -->
-					</ul>
+						<li id="hero2"></li>
+						<li id="hero3"></li>
+						<li id="hero4"></li>
+						<li id="hero5"></li>
+					</ul>-->
+					
+					<!-- this is the new slider which works with js, ive kept all the old code in html and css incase we want to revert, though i think this way gives more control - Caitlin -->
+					
+					<div>
+						<img class="mySlides" id="hero1">
+						<img class="mySlides" id="hero2">
+						<img class="mySlides" id="hero3">
+						<img class="mySlides" id="hero4">
+						<img class="mySlides" id="hero5">
+						
+					</div>
 				</div>
 			</div>
 			  
@@ -83,7 +95,7 @@
 			<div class="row">
 				<div class="twelve columns">
 					<!-- description / p-->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pulvinar lacus quis ornare. Suspendisse sed turpis sagittis, lobortis quam sit amet, volutpat nibh. Morbi vitae metus lectus. Cras augue.</p>
+					<p>This gallery houses many portraits commissioned by the National Portrait Gallery. Inside this gallery are portraits of distinguished Australians, created by equally distinguished contemporary artists. The works are diverse, and include paintings, portraits, ceramics and tapestries.</p>
 				</div>
 			</div>
 		</section> <!-- end #gallery-intro -->
@@ -105,7 +117,7 @@
 			<div class="row">
 				<div class="twelve columns">
 				<!-- description / p-->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pulvinar lacus quis ornare. Suspendisse sed turpis sagittis, lobortis quam sit amet, volutpat nibh. Morbi vitae metus lectus. Cras augue.</p>
+					<p>Ever wanted to recreate a portrait? Now’s your chance. Simply pick a portrait, match the pose and apply your filters. Let’s get ready for some portrait play!</p>
 				</div>
 			</div>
 			
@@ -118,6 +130,8 @@
 		</section> <!-- end #game-intro -->
 		
 	</div> <!-- end .container --> 
+<script src="scripts/jquery-3.2.0.js"></script>
+	<script src="scripts/scripts.js"></script>
 
 </body>
 </html>
