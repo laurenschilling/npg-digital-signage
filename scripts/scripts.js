@@ -42,6 +42,12 @@ $('#selectPortraitButton').on('click', function(){
   };
 });
 
+// Display Portrait text over image
+$('.four').on('click', function(){
+	$(".imageTextBox").removeClass("imageTextBox2");
+    $(this).find(".imageTextBox").toggleClass("imageTextBox2");
+});
+
 ///////////////////////////////////////////////////////
 // Page 3 "Match the pose"
 ///////////////////////////////////////////////////////
