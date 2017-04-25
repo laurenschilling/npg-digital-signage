@@ -5,11 +5,11 @@
 - Base Styles
 - Logo
 - Typography
+- Buttons
 - Hero Slider
 - Sections
-		- Section: Gallery
-		- Section: Match the Pose
-
+	- Section: Gallery
+	- Section: Match the Pose
 
 */
 
@@ -85,27 +85,93 @@ h3 {
 h4 {
 	font-size: 1.8rem;
 	line-height: 1;
-	letter-spacing: .2rem;
-	text-transform: uppercase; }
+	letter-spacing: .1rem; }	
+	
+	h4.letsPlay {
+		text-transform: uppercase; }
+	
+h5 {
+	font-size: 1.5rem;
+	line-height: 1; }
 
 p {
 	font-weight: 300;
 	font-size: 2rem; }
 
 .title {
-	padding-bottom: 5%;	 }
+	padding-bottom: 3%;	 }
 
 .subtitle {
 	font-size: 2.8rem; }
 
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	font-size: .9em;
+	font-weight: 400;
+	line-height: 40px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: #b42b33;
+	border-radius: 2px;
+	cursor: pointer;
+	box-sizing: border-box;
+	outline: 0;
+	border: 0; }
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #fff;
+  border-color: #888;
+  outline: 0; 
+  background-color: rgba(181, 43, 52, 0.85); }
+
 .backButton {
-	font-size: 3rem;
+	font-size: 2.2rem;
 	text-decoration: none;
 	color: #b42b33;
-}
+	position: absolute;
+	top: -40px;
+	left: 0; }
 
+	.backButton:hover,
+	.backButton:focus {
+		color: rgba(181, 43, 52, 0.85); }
+	
+	/* -- Go Back Icon -- */
+	a .fa { 
+		padding-right: 5px; }
 
-/*slider------------------------------------------- cw*/
+#selectPortraitButton {
+	background-color: #5a5a5a;
+	color: #fff;
+	cursor: default;
+	opacity: .8; }	
+  
+  
+/* Hero Slider - CW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */  
 
 .mySlides {
 	width: 100%;
@@ -119,94 +185,19 @@ p {
 	overflow: hidden;
 	white-space: nowrap;
 	top: 0;
-	left: 0; 
-}
-
-
-#hero1 {
-			background-image: url(http://www.portrait.gov.au/files/9/9/8/4/i9686.jpg); }
-		#hero2 {
-			background-image: url(http://www.portrait.gov.au/files/c/0/0/e/i8548.jpg); }
-		#hero3 {
-			background-image: url(http://www.portrait.gov.au/files/4/f/5/a/i5381.jpg); }
-		#hero4 {
-			background-image: url(http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg); }
-		#hero5 {
-			background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }
-
-
-/* Hero Slider – Work in Progress
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/*
-#hero-slider {
-	width: 100%;
-	min-height: 250px;
-	box-sizing: border-box;
-	text-indent: -9999px;
-	font-size: 0;
-	display: block;
-	background-size: 100%;
-	margin-bottom: 5%;
-	overflow: hidden;
-	white-space: nowrap;
-	top: 0;
 	left: 0; }
 
-	#hero-slider li {
-		margin: 0;
-		width: 100%;
-		padding: 0;
-		display: inline-block;
-		background-size: cover;
-		height: auto;
-		width: 100%; }
+	#hero1 {
+		background-image: url(http://www.portrait.gov.au/files/9/9/8/4/i9686.jpg); }
+	#hero2 {
+		background-image: url(http://www.portrait.gov.au/files/c/0/0/e/i8548.jpg); }
+	#hero3 {
+		background-image: url(http://www.portrait.gov.au/files/4/f/5/a/i5381.jpg); }
+	#hero4 {
+		background-image: url(http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg); }
+	#hero5 {
+		background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }
 
-		#hero-slider li:first-child {
-		      animation: slider 80s infinite;
-		     -webkit-animation: slider 80s infinite; }
-
-		/* Hero slider images 
-		#hero1 {
-			background-image: url(http://www.portrait.gov.au/files/9/9/8/4/i9686.jpg); }
-		#hero2 {
-			background-image: url(http://www.portrait.gov.au/files/c/0/0/e/i8548.jpg); }
-		#hero3 {
-			background-image: url(http://www.portrait.gov.au/files/4/f/5/a/i5381.jpg); }
-		#hero4 {
-			background-image: url(http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg); }
-		#hero5 {
-			background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }
-
-
-/* Hero slider animations 
-@keyframes slider {
-	0% { margin-left: 0px; }
-	10% { margin-left: 0px;	}
-	20% { margin-left: -200%; }
-	30% { margin-left: -200%; }
-	40% { margin-left: -400%; }
-	50% { margin-left: -400%; }
-	60% { margin-left: -600%; }
-	70% { margin-left: -700%; }
-	80% { margin-left: -800%; }
-	90% { margin-left: -800%; }
-	100% { margin-left: 0px; } }
-
-@-webkit-keyframes slider {
-	0% { margin-left: 0px; }
-	10% { margin-left: 0px;	}
-	20% { margin-left: -200%; }
-	30% { margin-left: -200%; }
-	40% { margin-left: -400%; }
-	50% { margin-left: -400%; }
-	60% { margin-left: -600%; }
-	70% { margin-left: -700%; }
-	80% { margin-left: -800%; }
-	90% { margin-left: -800%; }
-	100% { margin-left: 0px; } }
-
-*/
 
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -214,12 +205,20 @@ p {
 section {
 	padding-bottom: 2%; }
 
+footer {
+	padding: 20px 0;
+	margin-bottom: 10px; }
+
+
+/* Section: Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 #gallery {
-	max-height: 700px;
+	max-height: 600px;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch; } /* Alternate value is "auto" which stops scrolling immediately.
 											See here for more info: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling */
-
+											
 	#gallery .four.columns {
 		padding: 0;
 		display: inline-block; }
@@ -228,116 +227,106 @@ section {
 		box-sizing: border-box;
 		width: 100%;
 		height: auto;
-		cursor: pointer; }
+		cursor: pointer; }	
 
-footer {
-	padding: 3% 0; }
-
-
-/* Section: Gallery
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-#selectPortraitButton {
-	background-color: #777;
-	color: #999;
-	cursor: default;
-}
-
-/* TEXT ON IMAGE */
-
-.imageTextBox {
-    position:relative;
-	display: none;
-}
-
-.imageTextBox2 {
-    position:relative;
-	display: block;
-}
-.titlePic {
-  position: absolute;
-  bottom: 80px;
-  z-index: 15;
-  padding: 5px 0 5px 0px;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-  background-color: rgba(180, 43, 51, .5);
-  width: 100%; 
-  text-align:center;
- 
-}
-
-.text {
-  position: absolute;
-  background-color: rgba(15, 15, 15, 0.3);
-  color: #999;
-  bottom: 0px;
-  padding: 20px 15px;
-  width: 80%;
-}
-
-
+	/* -- Image Info -- */
+	.imageTextBox {
+	    position: relative;
+		display: none; }
+	
+		.imageTextBox2 {
+		    position: relative;
+			display: block; }
+	
+		.imageInfo {
+			position: absolute;
+			bottom: 0;
+			z-index: 15;
+			padding: 20px;
+			color: #fff;
+			text-align: left; }
+		
+			.imageInfo h4,
+			.imageInfo h5 {
+				margin-bottom: 6px; }
+		
+			.imageTitle {
+				text-transform: uppercase;
+				font-size: 2.2rem; }
+		
+			.imageMats {
+				text-transform: uppercase;
+				letter-spacing: .05em;
+				font-size: 1.5rem; }
 
 
 /* Section: Match the Pose
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #contentScreen4 {
-	display: none;
-}
+	display: none; }
+
 canvas {
-  display: none;
-}
+	display: none; }
+
 #artContainer {
-  display: inline;
-	width: 100%;
-}
+	display: inline;
+	width: 100%; }
+
 #squarePose {
-  width: 47.5%;
-  float: right;
-  overflow: hidden;
-}
+	width: 47.5%;
+	float: right;
+	overflow: hidden; }
+    
     #poseVideo {
-      margin-left: -25%;
-      height: 100%;
-    }
+	    margin-left: -20%;
+	    height: 100%; }
+    
     #poseImage {
-      margin-left: -25%;
-      display: none;
-    }
-		#filterButtons {
-		}
-				.filterButton {
-					float: right;
-					width: 14.15%;
-					height: 50px;
-					line-height: 50px;
-					background-color: rgba(0, 0, 0, 0.5);
-					text-align: center;
-					cursor: pointer;
-					display: none;
-				}
+	    margin-left: -20%;
+	    display: none; }
+			
+.filterButton {
+	float: right;
+	width: 14.15%;
+	height: 50px;
+	line-height: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	letter-spacing: .01em; }
+
+	.filterButton:first-child {
+		border-radius: 0 2px 2px 0; }
+		
+	.filterButton:last-child {
+		border-radius: 2px 0 0 2px; }
+			
 #shareButton {
-  display: none;
-}
-#filters {
-}
-		.filterRange {
-			text-align: center;
-			font-size: 2em;
-			display: none;
-		}
+  display: none; }
+
+#filterButtonsRow {
+	padding-top: 10px; }
+
+	.filterRange {
+		text-align: right;
+		font-size: 2em;
+		display: none; }
+		
 		input[type=range] {
-			width: 100%;
-		}
+			width: 99%; }
+		
 		input[type=range]::-moz-range-track {
-		  height: 1px;
-		  background: #fff;
-		}
+			height: 1px;
+			background: #fff;
+			cursor: pointer; }				
+		
 		input[type=range]::-moz-range-thumb {
 			border: 1px solid #fff;
-			border-radius: 0;
+			border-radius: 1px;
 			height: 20px;
-		  width: 20px;
-		  background: #b42b33;
-		}
-
+			width: 20px;
+			background: #b42b33;
+			cursor: pointer; }
+	

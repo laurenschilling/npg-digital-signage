@@ -30,6 +30,10 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://use.typekit.net/ltf5cnq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	<!-- Font Awesome
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+	<script src="https://use.fontawesome.com/01edb761b1.js"></script>
 
 </head>
 
@@ -40,7 +44,7 @@
 		<!-- Pick a Portrait Intro -->
 		<div class="row">
 			<div class="twelve columns">
-				<a class="backButton" href="index.html">Back</a>
+				<a class="backButton" href="index.html"><i class="fa fa-arrow-left"></i>Go back</a>
 			</div>
 		</div>
 
@@ -66,315 +70,346 @@
         <div class="row">
 				<div class="twelve columns">
 				<!-- description / p-->
-					<p>Tap one of the portraits below.</p>
+					<p>Tap a portrait below that you'd like to recreate. When you're ready, tap select! </p>
 				</div>
 			</div>
 
 		<!-- Gallery for Portrait Mosaic -->
 		<section id="gallery"> <!-- The images are contained within this section, which is set to overflow: scroll -->
 
-		<!-- images linked from gallery- WIP add info when clicked Bon 19/4 -->
-
-        <div class="row"> <!-- row 1 -->
-	<!-- art 1 gallery -->
-			<div class="four columns">
-				 <img id="art1" class="art" src="images/crop/art1.jpg" alt="Art1">
-                    <div class="imageTextBox">
-                             <div class="titlePic"> <h5>Mark Loane by Joachim Froese</h5>
-                      </div>
-                      <div class="text"> Inkjet print (frame: 69.0 x 62.4 cm, image/sheet: 46.0 x 39.4 cm) </div>
-                   </div>  
-            </div> 
-                    
-           
-<!-- art 2 gallery -->
-						<div class="four columns">
-					  		<img id="art2" class="art" src="images/crop/art2.jpg" alt="Art2">
-                          <div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Carla Zampatti, 2015 by Georges Antoni</h5>
-                               </div>
-                          </div>  
-						</div>
-
-<!-- art 3 gallery -->
-						<div class="four columns">
-						     <img id="art3" class="art" src="images/crop/art3.jpg" alt="Art3">
-						   <div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Tim Bonyhady by Georges Antoni</h5>
-                               </div>
-                          </div>  
-						</div>	
-                               
+			<!-- images linked from gallery- WIP add info when clicked Bon 19/4 -->
+	
+	        <div class="row"> <!-- row 1 -->
+				<div class="four columns">
+					<img id="art1" class="art" src="images/crop/art1.jpg" alt="Mark Loane">
+	                    <div class="imageTextBox">
+	                        <div class="imageInfo">
+			                    <h4 class="imageTitle">Mark Loane</h4>
+			                    <h4>by Joachim Froese</h4>
+								<h5 class="imageMats">Inkjet print (2016)</h5>
+		                    </div>
+	                    </div>
+	            </div>  
+	                    
+				<div class="four columns">
+					<img id="art2" class="art" src="images/crop/art2.jpg" alt="Carla Zampatti">
+	                    <div class="imageTextBox">
+	                        <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Carla Zampatti</h4> 
+		                        <h4>by Georges Antoni</h4>
+		                        <h5 class="imageMats">Inkjet print (2015)</h5>
+	                        </div>
+	                    </div>  
+				</div>
+	
+				<div class="four columns">
+				    <img id="art3" class="art" src="images/crop/art3.jpg" alt="Tim Bonyhady">
+						<div class="imageTextBox">
+							<div class="imageInfo"> 
+								<h4 class="imageTitle">Tim Bonyhady</h4>
+								<h4>by Andrew Sayers AM</h4>
+								<h5 class="imageMats">Oil on canvas (2015)</h5>
+							</div>
+	                   </div>  
+				</div>	
+	                               
 			</div> <!-- end row 1 -->
-
+	
 			<div class="row"> <!-- row 2 -->
-<!-- art 4 gallery -->
-					<div class="four columns">
-							<img id="art4" class="art" src="images/crop/art4.jpg" alt="Art4">
-							<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Equation of a life <br>- a portrait of Professor Derek Denton <br>
-											by Evert Ploeg</h5>
-                               </div>
-                          </div>
-					</div>
+				<div class="four columns">
+					<img id="art4" class="art" src="images/crop/art4.jpg" alt="Professor Derek Denton">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+                                <h4>Equation of a life - a portrait of <span class="imageTitle">Professor Derek Denton</span></h4>
+								<h4>by Evert Ploeg</h4>
+								<h5 class="imageMats">Oil on linen (2016)</h5>
+                            </div>
+                        </div>
+				</div>
                     
-<!-- art 5 gallery -->
-					<div class="four columns">
-							<img id="art5" class="art" src="images/crop/art5.jpg" alt="Art5">
-							<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Quentin Bryce by Michael Zavros</h5>
-                               </div>
-                          </div>
+				<div class="four columns">
+					<img id="art5" class="art" src="images/crop/art5.jpg" alt="Quentin Bryce">
+						<div class="imageTextBox">
+                           <div class="imageInfo"> 
+                               <h4 class="imageTitle">Quentin Bryce</h4>
+                               <h4>by Michael Zavros</h4>
+                               <h5 class="imageMats">Oil on canvas (2016)</h5>
+                           </div>
+                      </div>
+				</div>
+                
+				<div class="four columns">
+					<img id="art6" class="art" src="images/crop/art6.jpg" alt="Richard Walley">
+						<div class="imageTextBox">
+                           <div class="imageInfo"> 
+                               <h4 class="imageTitle">Richard Walley</h4>
+                               <h4>by Julie Dowling</h4>
+                               <h5 class="imageMats">Synthetic polymer paint and red ochre on canvas (2015)</h5>
+                           </div>
+                      	</div>
+				</div>
+			
+			</div> <!-- end row 2 -->
+	
+			<div class="row"> <!-- row 3 -->
+				<div class="four columns">
+					<img id="art7" class="art" src="images/crop/art7.jpg" alt="Art7">
+						<div class="imageTextBox">
+	                        <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Jack Thompson</h4> 
+		                        <h4>by Julie Dowling</h4>
+		                        <h5 class="imageMats">Synthetic polymer paint and red ochre on canvas (2013)</h5>
+	                        </div>
+						</div>
+				</div>
+	                
+				<div class="four columns">
+					<img id="art8" class="art" src="images/crop/art8.jpg" alt="Art8">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Professor Mandyam Srinivasan</h4> 
+		                        <h4>by Sam Leach</h4>
+		                        <h5 class="imageMats">Oil and resin on plywood (2014)</h5>
+	                        </div>
+						</div>
+				</div>
+                
+				<div class="four columns">
+					<img id="art9" class="art" src="images/crop/art9.jpg" alt="Art9">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Professor Penny Sackett, astronomer and physicist</h4> 
+		                        <h4>by Andrew Mezei</h4>
+		                        <h5 class="imageMats">Oil on linen (2011)</h5>
+	                        </div>
+						</div>
+				</div>
+				
+			</div> <!-- end row 3 -->
+	
+			<div class="row"> <!-- row 4 -->
+				<div class="four columns">
+					<img id="art10" class="art" src="images/crop/art10.jpg" alt="Art10">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Fiona Stanley</h4> 
+		                        <h4>by Mary Moore</h4>
+		                        <h5 class="imageMats">Oil on composition board (2011)</h5>
+	                        </div>
+						</div>
+				</div>
+
+				<div class="four columns">
+					<img id="art11" class="art" src="images/crop/art11.jpg" alt="Art11">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Mick Fanning at Snapper Rock</h4> 
+		                        <h4>by Andrew Maccoll</h4>
+		                        <h5 class="imageMats">Type C photograph (2010)</h5>
+	                        </div>
+						</div>
+				</div>
+                
+				<div class="four columns">
+					<img id="art12" class="art" src="images/crop/art12.jpg" alt="Art12">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Marilyn Darling AC</h4> 
+		                        <h4>by Anne Zahalka</h4>
+		                        <h5 class="imageMats">Colour transparency on lightbox (2010)</h5>
+	                        </div>
+						</div>
+				</div>
+				
+			</div> <!-- end row 4 -->
+	
+			<div class="row"> <!-- row 5 -->
+				<div class="four columns">
+					<img id="art13" class="art" src="images/crop/art13.jpg" alt="Art13">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Mick Dodson</h4> 
+		                        <h4>by Ricky Maynard</h4>
+		                        <h5 class="imageMats">Gelatin silver photograph (2010)</h5>
+	                        </div>
+						</div>
+				</div>
+                
+				<div class="four columns">
+					<img id="art14" class="art" src="images/crop/art14.jpg" alt="Art14">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Paul Grabowsky</h4> 
+		                        <h4>by Martin Philbey</h4>
+		                        <h5 class="imageMats">Type C photograph (2009)</h5>
+	                        </div>
+						</div>
+				</div>
+                
+				<div class="four columns">
+					<img id="art15" class="art" src="images/crop/art15.jpg" alt="Art15">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Sir Donald Bradman</h4> 
+		                        <h4>by Bill Leak</h4>
+		                        <h5 class="imageMats">Oil on canvas (1990)</h5>
+	                        </div>
+						</div>
+				</div>
+				
+			</div> <!-- end row 5 -->
+	
+			<div class="row"> <!-- row 6 -->
+				<div class="four columns">
+					<img id="art16" class="art" src="images/crop/art16.jpg" alt="Art16">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+                            <h4 class="imageTitle">Ronald Dale Barassi</h4> 
+	                        <h4>by Lewis Miller</h4>
+	                        <h5 class="imageMats">Oil on canvas (2000)</h5>
+                        </div>
 					</div>
-                    
-<!-- art 6 gallery -->
-					<div class="four columns">
-							<img id="art6" class="art" src="images/crop/art6.jpg" alt="Art6">
-							<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Richard Walley by Julie Dowling</h5>
-                               </div>
-                          </div>
-					</div>
-		</div> <!-- end row 2 -->
-
-		<div class="row"> <!-- row 3 -->
-<!-- art 7 gallery -->
+				</div>
+	                
 				<div class="four columns">
-						<img id="art7" class="art" src="images/crop/art7.jpg" alt="Art7">
+					<img id="art17" class="art" src="images/crop/art17.jpg" alt="Art17">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Jack Thompson by Julie Dowling</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Sir Charles Court and Richard Court</h4> 
+		                        <h4>by Mary Moore</h4>
+		                        <h5 class="imageMats">Oil on composition board (2006-07)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 8 gallery -->
 				<div class="four columns">
-						<img id="art8" class="art" src="images/crop/art8.jpg" alt="Art8">
+					<img id="art18" class="art" src="images/crop/art18.jpg" alt="Art18">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Professor Mandyam Srinivasan <br> by Sam Leach</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Her Excellency Marjorie Jackson-Nelson AC CVO MBE</h4> 
+		                        <h4>by Avril Thomas</h4>
+		                        <h5 class="imageMats">Oil on canvas (2006)</h5>
+	                        </div>
+						</div>
+				</div>
+				
+			</div> <!-- end row 6 -->
+	
+			<div class="row"> <!-- row 7 -->
+				<div class="four columns">
+					<img id="art19" class="art" src="images/crop/art19.jpg" alt="Art19">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Dr John Yu</h4> 
+		                        <h4>by Ah Xian</h4>
+		                        <h5 class="imageMats">Glazed ceramic (2004)</h5>
+	                        </div>
+						</div>
+				</div>
+			
+				<div class="four columns">
+					<img id="art20" class="art" src="images/crop/art20.jpg" alt="Art20">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Portrait of Elizabeth Jolley</h4> 
+		                        <h4>by Mary Moore</h4>
+		                        <h5 class="imageMats">Oil on board (2003)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 9 gallery -->
 				<div class="four columns">
-						<img id="art9" class="art" src="images/crop/art9.jpg" alt="Art9">
+					<img id="art21" class="art" src="images/crop/art21.jpg" alt="Art21">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Professor Penny Sackett, <br> astronomer and physicist <br> by Andrew Mezei</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Betty Cuthbert</h4> 
+		                        <h4>by Andrew Daly</h4>
+		                        <h5 class="imageMats">Oil on canvas (2002)</h5>
+	                        </div>
+						</div>
 				</div>
-		</div> <!-- end row 3 -->
-
-		<div class="row"> <!-- row 4 -->
-<!-- art 10 gallery -->
+				
+			</div> <!-- end row 7 -->
+	
+			<div class="row"> <!-- row 8 -->
 				<div class="four columns">
-						<img id="art10" class="art" src="images/crop/art10.jpg" alt="Art10">
+					<img id="art22" class="art" src="images/crop/art22.jpg" alt="Art22">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Fiona Stanley by Mary Moore</h5>
-                               </div>
-                          </div>
-				</div>
-
-<!-- art 11 gallery -->
-				<div class="four columns">
-						<img id="art11" class="art" src="images/crop/art11.jpg" alt="Art11">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Mick Fanning at Snapper Rock <br> by Andrew Maccoll</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Clifford Possum Tjapaltjarri</h4> 
+		                        <h4>by Tim Johnson</h4>
+		                        <h5 class="imageMats">Oil and synthetic polymer paint on canvas (2002)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 12 gallery -->
 				<div class="four columns">
-						<img id="art12" class="art" src="images/crop/art12.jpg" alt="Art12">
+					<img id="art23" class="art" src="images/crop/art23.jpg" alt="Art23">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Marilyn Darling AC by Anne Zahalka</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 4 -->
-
-		<div class="row"> <!-- row 5 -->
-<!-- art 13 gallery -->
-				<div class="four columns">
-						<img id="art13" class="art" src="images/crop/art13.jpg" alt="Art13">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Mick Dodson by Ricky Maynard</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Andy Thomas</h4> 
+		                        <h4>by Montalbetti+Campbell</h4>
+		                        <h5 class="imageMats">Inkjet Print (2002)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 14 gallery -->
 				<div class="four columns">
-						<img id="art14" class="art" src="images/crop/art14.jpg" alt="Art14">
+					<img id="art24" class="art" src="images/crop/art24.jpg" alt="Art24">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Paul Grabowsky by Martin Philbey</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Professor Peter Doherty</h4> 
+		                        <h4>by Rick Amor</h4>
+		                        <h5 class="imageMats">Oil on canvas (2001)</h5>
+	                        </div>
+						</div>
+				</div>
+				
+			</div> <!-- end row 8 -->
+	
+			<div class="row"> <!-- row 9 -->
+				<div class="four columns">
+					<img id="art25" class="art" src="images/crop/art25.jpg" alt="Art25">
+						<div class="imageTextBox">
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Deborah Mailman</h4> 
+		                        <h4>by Evert Ploeg</h4>
+		                        <h5 class="imageMats">Oil on jute (1999)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 15 gallery -->
 				<div class="four columns">
-						<img id="art15" class="art" src="images/crop/art15.jpg" alt="Art15">
+					<img id="art26" class="art" src="images/crop/art26.jpg" alt="Art26">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Sir Donald Bradman by Bill Lea</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 5 -->
-
-		<div class="row"> <!-- row 6 -->
-<!-- art 16 gallery -->
-				<div class="four columns">
-						<img id="art16" class="art" src="images/crop/art16.jpg" alt="Art16">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Ronald Dale Barassi by Lewis Miller</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Nick Cave</h4> 
+		                        <h4>by Howard Arkley</h4>
+		                        <h5 class="imageMats">Synthetic polymer paint on canvas (1999)</h5>
+	                        </div>
+						</div>
 				</div>
                 
-<!-- art 17 gallery -->
 				<div class="four columns">
-						<img id="art17" class="art" src="images/crop/art17.jpg" alt="Art17">
+					<img id="art27" class="art" src="images/crop/art27.jpg" alt="Art27">
 						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Sir Charles Court and Richard Court <br> by Mary Moore</h5>
-                               </div>
-                          </div>
+                            <div class="imageInfo"> 
+	                            <h4 class="imageTitle">Cathy Freeman</h4> 
+		                        <h4>by Kerrie Lester</h4>
+		                        <h5 class="imageMats">Oil on hand-stitched canvas (1999)</h5>
+	                        </div>
+						</div>
 				</div>
-                
-<!-- art 18 gallery -->
-				<div class="four columns">
-						<img id="art18" class="art" src="images/crop/art18.jpg" alt="Art18">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Her Excellency Marjorie Jackson-Nelson<br>
-									 by Avril Thomas</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 6 -->
-
-		<div class="row"> <!-- row 7 -->
-<!-- art 19 gallery -->
-				<div class="four columns">
-						<img id="art19" class="art" src="images/crop/art19.jpg" alt="Art19">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Dr John Yu by Ah Xian</h5>
-                               </div>
-                          </div>
-				</div>
-                
-<!-- art 20 gallery -->
-				<div class="four columns">
-						<img id="art20" class="art" src="images/crop/art20.jpg" alt="Art20">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Elizabeth Jolley by Mary Moore</h5>
-                               </div>
-                          </div>
-							
-				</div>
-                
-<!-- art 21 gallery -->
-				<div class="four columns">
-						<img id="art21" class="art" src="images/crop/art21.jpg" alt="Art21">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Betty Cuthbert by Andrew Daly</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 7 -->
-
-		<div class="row"> <!-- row 8 -->
-<!-- art 22 gallery -->
-				<div class="four columns">
-						<img id="art22" class="art" src="images/crop/art22.jpg" alt="Art22">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Clifford Possum Tjapaltjarri <br>by Tim Johnson</h5>
-                               </div>
-                          </div>
-				</div>
-                
-<!-- art 23 gallery -->
-				<div class="four columns">
-						<img id="art23" class="art" src="images/crop/art23.jpg" alt="Art23">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Andy Thomas by Montalbetti+Campbell</h5>
-                               </div>
-                          </div>
-				</div>
-                
-<!-- art 24 gallery -->
-				<div class="four columns">
-						<img id="art24" class="art" src="images/crop/art24.jpg" alt="Art24">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Professor Peter Doherty by Rick Amor</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 8 -->
-
-		<div class="row"> <!-- row 9 -->
-<!-- art 25 gallery -->
-				<div class="four columns">
-						<img id="art25" class="art" src="images/crop/art25.jpg" alt="Art25">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Deborah Mailman by Evert Ploeg</h5>
-                               </div>
-                          </div>
-				</div>
-                
-<!-- art 26 gallery -->
-				<div class="four columns">
-						<img id="art26" class="art" src="images/crop/art26.jpg" alt="Art26">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Nick Cave by Howard Arkley</h5>
-                               </div>
-                          </div>
-				</div>
-                
-<!-- art 27 gallery -->
-				<div class="four columns">
-						<img id="art27" class="art" src="images/crop/art27.jpg" alt="Art27">
-						<div class="imageTextBox">
-                               <div class="titlePic"> 
-                                   <h5>Cathy Freeman by Kerrie Lester</h5>
-                               </div>
-                          </div>
-				</div>
-		</div> <!-- end row 9 -->
+				
+			</div> <!-- end row 9 -->
 
 		</section> <!-- end #gallery -->
-
+		
 		<!-- Footer -->
 		<footer>
 			<div class="twelve columns">
 				<!-- next button -->
-				<a id="selectPortraitButton" class="button" href="page3.html">Select this portrait</a>
+				<a id="selectPortraitButton" class="button" href="page3.html">I want to select this portrait</a>
 			</div>
 		</footer>
 

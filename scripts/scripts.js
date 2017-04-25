@@ -25,9 +25,10 @@
 $('.art').on('click', function(){
     // Visually highlight the selection and restore previous selection to normal
     $('.art').css('filter', 'brightness(100%)');
-    $(this).css('filter', 'brightness(25%)');
+    $(this).css('filter', 'brightness(30%)');
     // visually indicate that 'next' button can be clicked
     $('#selectPortraitButton').css('background-color', '#b42b33');
+    $('#selectPortraitButton').css('opacity', '1');
     $('#selectPortraitButton').css('color', '#fff');
     $('#selectPortraitButton').css('cursor', 'pointer');
     // Store selection
