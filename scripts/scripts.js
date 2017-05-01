@@ -35,8 +35,15 @@ $('.four').on('click', function(){
 // Page 3 "Match the pose"
 ///////////////////////////////////////////////////////
 
+window.navigator = window.navigator || {};
+navigator.getUserMedia = navigator.getUserMedia       ||
+                        navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia    ||
+                        null;
+
+
 // Use Firefox-specific prefix for getUserMedia
-navigator.getUserMedia = navigator.mozGetUserMedia;
+// navigator.getUserMedia = navigator.mozGetUserMedia;
 
 var video = $("video")[0];
 var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
