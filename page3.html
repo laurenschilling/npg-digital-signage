@@ -32,13 +32,13 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 	<!-- Font Awesome
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://use.fontawesome.com/01edb761b1.js"></script>
-	
+
 </head>
 
 <body>
-	
+
 	<div class="container">
 
 		<section>
@@ -79,12 +79,12 @@
 				<div class="six columns">
 					<img id="artContainer"/>
 				</div>
-				
+
 				<div id="squarePose" class="six columns">
 					<video id="poseVideo" autoplay></video>
 					<img id="poseImage" src="" />
 				</div>
-				
+
 				<!-- Pose filter buttons -->
 				<div class="row" id="filterButtons">
 					<div class="offset-by-six six columns" id="filterButtonsRow">
@@ -97,7 +97,7 @@
 						<div class="filterButton" data-filterType="filterSepiaWrap">Sepia</div>
 					</div>
 				</div>
-				
+
 				<canvas id="canvas"></canvas> <!-- Never displayed, just used to capture video and create .jpg -->
 			</div>
 
@@ -106,27 +106,27 @@
 				<div id="filterBlurWrap" class="filterRange offset-by-six six columns">
 					<input id="filterBlur" type="range" value="0" step="1" min="0" max="10" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterBrightnessWrap" class="filterRange offset-by-six six columns">
 					<input id="filterBrightness" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterContrastWrap" class="filterRange offset-by-six six columns">
 					<input id="filterContrast" type="range" value="100" step="1" min="0" max="1000" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterGrayscaleWrap" class="filterRange offset-by-six six columns">
 					<input id="filterGrayscale" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterHueWrap" class="filterRange offset-by-six six columns">
 					<input id="filterHue" type="range" value="0" step="1" min="0" max="360" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterSaturateWrap" class="filterRange offset-by-six six columns">
 					<input id="filterSaturate" type="range" value="100" step="1" min="0" max="200" oninput="changeValue()" onchange="changeValue()" />
 				</div>
-				
+
 				<div id="filterSepiaWrap" class="filterRange offset-by-six six columns">
 					<input id="filterSepia" type="range" value="0" step="1" min="0" max="100" oninput="changeValue()" onchange="changeValue()" />
 				</div>
@@ -139,7 +139,7 @@
 			<div class="twelve columns">
 				<!-- next button -->
 				<button id="poseButtonCapture" class="button">Take Portrait</button>
-				<a class="button" id="shareButton" href="#">Share Your Portrait</a>
+				<a class="button" id="shareButton" href="page4.html">Share Your Portrait</a>
 			</div>
 		</footer>
 
