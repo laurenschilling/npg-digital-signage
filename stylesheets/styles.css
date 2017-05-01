@@ -220,8 +220,9 @@ footer {
 #gallery {
 	max-height: 600px;
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch; } /* Alternate value is "auto" which stops scrolling immediately.
+	-webkit-overflow-scrolling: touch;  /* Alternate value is "auto" which stops scrolling immediately.
 											See here for more info: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling */
+	overflow-x: hidden; }			
 
 	#gallery .four.columns {
 		padding: 0;
@@ -285,12 +286,14 @@ canvas {
     #poseVideo {
 	    margin-left: -20%;
 	    height: 100%;
-			transform: rotateY(180deg);
-			-moz-transform:rotateY(180deg);	}
+		transform: rotateY(180deg);
+		-moz-transform:rotateY(180deg);	}
 
     #poseImage {
 	    margin-left: -20%;
-	    display: none; }
+	    display: none;
+	    transform: rotateY(180deg);
+		-moz-transform:rotateY(180deg);	}
 
 .filterButton {
 	float: right;
