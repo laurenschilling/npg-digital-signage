@@ -35,6 +35,7 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
 	<script src="https://use.fontawesome.com/01edb761b1.js"></script>
 	
+	
 </head>
 
 <body>
@@ -60,26 +61,28 @@
 			  
 			<div class="row">
 				<div class="twelve columns">
-					<!-- space for hero image/ possible sequence-->
-					<!-- this is a work in progress! -lauren -->
-					
-					<!--<ul id="hero-slider">
-						<li id="hero1"></li><!--
-						<li id="hero2"></li>
-						<li id="hero3"></li>
-						<li id="hero4"></li>
-						<li id="hero5"></li>
-					</ul>-->
+					<!-- hero slider -->
 					
 					<!-- this is the new slider which works with js, ive kept all the old code in html and css incase we want to revert, though i think this way gives more control - Caitlin -->
 					
-					<div>
+					<!-- <div>
 						<img class="mySlides" src="http://www.portrait.gov.au/files/9/9/8/4/i9686.jpg">
 						<img class="mySlides" src="http://www.portrait.gov.au/files/c/0/0/e/i8548.jpg">
 						<img class="mySlides" src="http://www.portrait.gov.au/files/4/f/5/a/i5381.jpg">
 						<img class="mySlides" src="http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg">
-						<img class="mySlides" srs="http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg">
-						
+						<img class="mySlides" src="http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg">
+					</div> -->
+					
+					<!-- I've added in this new slider using a jQuery plugin, but kept the existing code in case we need to revert back – Lauren -->
+					<div id="carouselDiv">
+						<ul id="carousel">
+							<li><img src="images/carousel/art2-carousel.jpg" alt=""></li>
+							<li><img src="images/carousel/art5-carousel.jpg" alt=""></li>
+							<li><img src="images/carousel/art15-carousel.jpg" alt=""></li>
+							<li><img src="images/carousel/art6-carousel.jpg" alt=""></li>
+							<li><img src="images/carousel/art23-carousel.jpg" alt=""></li>
+							<li><img src="images/carousel/art27-carousel.jpg" alt=""></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -134,8 +137,15 @@
 		</section> <!-- end #game-intro -->
 		
 	</div> <!-- end .container --> 
-<script src="scripts/jquery-3.2.0.js"></script>
+	<script src="scripts/jquery-3.2.0.js"></script>
 	<script src="scripts/scriptpage1.js"></script>
+	<script>
+		$(function(){
+			$('#carousel').infiniteCarousel({
+				imagePath: '../images/carousel/'
+			});
+		});
+	</script>
 
 </body>
 </html>

@@ -88,15 +88,17 @@ h4 {
 	letter-spacing: .1rem; }
 
 	h4.letsPlay {
-		text-transform: uppercase; }
+		text-transform: uppercase;
+		font-size: 2rem;
+		font-weight: 500; }
 
 h5 {
 	font-size: 1.5rem;
 	line-height: 1; }
 
 p {
-	font-weight: 300;
-	font-size: 2rem; }
+	font-weight: 400;
+	font-size: 2.5rem; }
 
 .title {
 	padding-bottom: 3%;	 }
@@ -184,6 +186,7 @@ input[type="button"]:focus {
 		background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }*/
 
 
+/*
 .mySlides {
 	content:"";
 	width: 100%;
@@ -199,8 +202,32 @@ input[type="button"]:focus {
 	white-space: nowrap;
 	top: 0;
 	left: 0; }
+*/
 
+#carouselDiv {
+	margin-bottom: 5%;
+	width: 100%;
+	height: auto;
+    overflow: hidden;
+    position: relative; }
 
+/*
+	#carousel {
+		left: 0;
+	    top: 0;
+	    height: 100%;
+	    width: 100%;
+	    position: absolute; }
+		
+*/
+		#carousel li {
+			list-style: none; }
+		
+			#carousel li img {
+				width:100%;
+				height: auto;
+				overflow: hidden; }
+	
 
 
 /* Sections
