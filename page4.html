@@ -31,6 +31,10 @@
 	<script src="https://use.typekit.net/ltf5cnq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
+	<!-- Font Awesome
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="https://use.fontawesome.com/01edb761b1.js"></script>
+
 </head>
 
 <body>
@@ -43,8 +47,8 @@
 			
 			<!-- columns should be the immediate child of a .row -->
 			<div class="row">
-				<div class="six columns">
-					<!-- help button -->
+				<div class="twelve columns">
+					<a class="backButton" href="page2.html"><i class="fa fa-arrow-left"></i>Go back</a>
 				</div>
 			</div>
 			  
@@ -70,7 +74,7 @@
 			<div class="row">
 				<div class="twelve columns">
 				<!-- description / p-->
-					<p>Your portrait is complete! Save it to your phone or upload it to social media. Don’t forget to hashtag #portraitplay and #npg.</p>
+					<p>Your portrait is complete! Send it to your email or phone, then upload it to social media and hashtag #portraitplay and #npg.</p>
 				</div>
 			</div>
 			
@@ -83,16 +87,22 @@
 					<img id="artContainer"/>
 				</div>
 				
-				<div class="six columns">
-					<!-- captured and retrieved canvas image to go here -->
+				<!-- captured and retrieved canvas image to go here -->
+				
+				<div class="row">
+					<div class="six columns placeholder">
+					</div>
+
+					<div class="six columns placeholder">
+					</div>
 				</div>
-			</div>
+		
 			
 			<!-- Share Buttons -->
 			<div class="row">
-				<div class="twelve columns">
-					<button id="sendToEmail" class="button">Send to your email</button>
-					<button id="sendToPhone" class="button">Send to your phone</button>
+				<div class="sendButtons twelve columns">
+					<button id="sendToEmail" class="button send"><i class="fa fa-envelope"></i>Send to your email</button>
+					<button id="sendToPhone" class="button send"><i class="fa fa-paper-plane"></i>Send to your phone</button>
 				</div>
 			</div>
 					
@@ -101,11 +111,11 @@
 	  
 		<!-- Footer -->
 		<footer>
-			<div class="twelve columns">
+			<div class="ppButtons twelve columns">
 				<!-- next buttons -->
-				<button id="sendToPhone" class="button">Add your portrait to the Portrait Play gallery</button>
-				<a class="button" href="">View the Portrait Play gallery</a>
-				<a class="button" href="/index.html">Return to the beginning</a>
+				<button id="addPortrait" class="button pp">Add your pic to the Portrait Play gallery</button>
+				<a class="button pp" href="">View the Portrait Play gallery</a>
+				<a class="button pp" href="/index.html">Return to the beginning</a>
 			</div>
 		</footer>
 	  

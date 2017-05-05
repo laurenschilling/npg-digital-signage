@@ -162,15 +162,36 @@ input[type="button"]:focus {
 		color: rgba(181, 43, 52, 0.85); }
 
 	/* -- Go Back Icon -- */
-	a .fa {
+	a .fa,
+	button .fa {
 		padding-right: 5px; }
-
+	
 #selectPortraitButton {
 	background-color: #5a5a5a;
 	color: #fff;
 	cursor: default;
 	opacity: .8; }
 
+/* Send Buttons */
+.sendButtons {
+	margin: 0 auto;
+	text-align: center; }
+
+	.send,
+	.pp {
+		width: 20%;
+		margin-right: 7px; }
+	
+	.send:last-child,
+	.pp:last-child {
+		margin-right: 0; }
+
+.ppButtons {
+	text-align: center;
+	margin-bottom: 5%; }
+	
+	.pp {
+		width: 30%; }
 
 /* Hero Slider - CW
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -365,3 +386,12 @@ canvas {
 			width: 20px;
 			background: #b42b33;
 			cursor: pointer; }
+
+
+/* Section: Share
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.placeholder {
+	background-color: rgba(0, 0, 0, .8);
+	width: 49% !important;
+	height: 400px;
+	margin-bottom: 5%; }
