@@ -392,7 +392,8 @@ canvas {
 	margin-bottom: 5%; }
 
 #enterEmail {
-	padding-top: 5%; }
+	padding-top: 5%;
+	display: none; }
 	
 	#enterEmail label {
 		text-transform: uppercase;
@@ -401,7 +402,7 @@ canvas {
 		text-align: center; }
 
 	#emailInput {
-		color: #000;
+		color: #232323;
 		letter-spacing: 0.01em;
 		font-size: 1.1em;
 		text-align: center;	}
@@ -409,12 +410,6 @@ canvas {
 	#emailInput:focus {
 		border: 1px solid #b42b33; }
 		
-	.showForm {
-		display: block; }
-	
-	.hideForm {
-		display: none; }
-
 
 /* Help Button WIP bonney 2/5
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

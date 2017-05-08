@@ -31,6 +31,34 @@ $('.four').on('click', function(){
     $(this).find(".imageTextBox").toggleClass("imageTextBox2");
 });
 
+//////////////////////////////////////////////////////
+
+// Page 5: Share Buttons (this wouldn't work at the bottom of the script, so it's been moved up here)
+
+// When #sendToEmail button is clicked, display form with email input
+$('#sendToEmail').on('click', function(){
+	$('#enterEmail').css('display', 'block');
+});
+
+// When submit is clicked, display successful message (this doesn't actually determine whether it's a success or not, as we're not actually emailing the recipient in this prototype
+$('#submit').on('click', function(){
+	$('#submit').attr('value', 'Email sent!');
+});
+
+// This doesn't actually send the email anywhere, it just prevents the page from reloading
+$(document).ready(function(){
+   var $form = $('form');
+   $form.submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(response){
+	  	// action to email the recipient goes here
+      },'json');
+      return false;
+   });
+});
+
+//////////////////////////////////////////////////////
+
+
 ///////////////////////////////////////////////////////
 // Page 3 "Match the pose"
 ///////////////////////////////////////////////////////
@@ -124,6 +152,7 @@ $('.backButton').on('click', function(){
     localStorage.clear();
 });
 
+
 //////////////////////////////////////////////////////
 
 // share button
@@ -155,15 +184,3 @@ function saveImage(dataURL) {
 	
 };
 
-//////////////////////////////////////////////////////
-
-// Send to email - WIP Lauren 8/5
-
-document.getElementById('sendToEmail').addEventListener('click', function() {
-// $('#sendToEmail').on('click', function(){
-	$('#enterEmail').removeClass("hideForm");
-});
-
-$('#submit').on('click', function(){
-	$('#submit').attr('value', 'Email sent!');
-});
