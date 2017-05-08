@@ -94,8 +94,10 @@
 					
 					</div>
 
+<!--
 					<div class="six columns placeholder">
 					</div>
+-->
 				</div>
 		
 			
@@ -103,9 +105,21 @@
 			<div class="row">
 				<div class="sendButtons twelve columns">
 					<button id="sendToEmail" class="button send"><i class="fa fa-envelope"></i>Send to your email</button>
+					
 					<button id="sendToPhone" class="button send"><i class="fa fa-paper-plane"></i>Send to your phone</button>
 				</div>
 			</div>
+			
+			<!-- Form to enter email address WIP Lauren 8/5 -->
+			<form id="enterEmail" class="hideForm">
+				<div class="row">
+					<div class="offset-by-three six columns">
+						<label for="emailInput">Enter your email:</label>
+						<input class="u-full-width" type="email" id="emailInput">
+						<input class="u-full-width" type="submit" id="submit" value="Send my portrait!">
+					</div>
+				</div>
+			</form>
 					
 		</section> <!-- end #sharePortait -->
 	  
@@ -116,11 +130,14 @@
 				<!-- next buttons -->
 				<button id="addPortrait" class="button pp">Add your pic to the Portrait Play gallery</button>
 				<a class="button pp" href="">View the Portrait Play gallery</a>
-				<a class="button pp" href="/index.html">Return to the beginning</a>
+				<a class="button pp" href="index.html">Return to the beginning</a>
 			</div>
 		</footer>
 	  
 	</div> <!-- end .container -->
+
+	<script src="scripts/jquery-3.2.0.js"></script>
+	<script src="scripts/scripts.js"></script>
 
 </body>
 </html>

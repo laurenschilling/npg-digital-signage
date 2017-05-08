@@ -155,3 +155,15 @@ function saveImage(dataURL) {
 	
 };
 
+//////////////////////////////////////////////////////
+
+// Send to email - WIP Lauren 8/5
+
+document.getElementById('sendToEmail').addEventListener('click', function() {
+// $('#sendToEmail').on('click', function(){
+	$('#enterEmail').removeClass("hideForm");
+});
+
+$('#submit').on('click', function(){
+	$('#submit').attr('value', 'Email sent!');
+});

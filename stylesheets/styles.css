@@ -391,6 +391,29 @@ canvas {
 	height: 400px;
 	margin-bottom: 5%; }
 
+#enterEmail {
+	padding-top: 5%; }
+	
+	#enterEmail label {
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: 400;
+		text-align: center; }
+
+	#emailInput {
+		color: #000;
+		letter-spacing: 0.01em;
+		font-size: 1.1em;
+		text-align: center;	}
+		
+	#emailInput:focus {
+		border: 1px solid #b42b33; }
+		
+	.showForm {
+		display: block; }
+	
+	.hideForm {
+		display: none; }
 
 
 /* Help Button WIP bonney 2/5
