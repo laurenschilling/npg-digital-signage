@@ -33,7 +33,7 @@ $('.four').on('click', function(){
 
 //////////////////////////////////////////////////////
 
-// Page 5: Share Buttons (this wouldn't work at the bottom of the script, so it's been moved up here)
+// Page 4: Share Buttons (this wouldn't work at the bottom of the script, so it's been moved up here)
 
 // When #sendToEmail button is clicked, display form with email input
 $('#sendToEmail').on('click', function(){
@@ -151,8 +151,7 @@ function changeValue() {
 $('.backButton').on('click', function(){
     localStorage.clear();
 });
-
-
+	
 //////////////////////////////////////////////////////
 
 // share button
@@ -183,4 +182,3 @@ function saveImage(dataURL) {
 	});
 	
 };
-
