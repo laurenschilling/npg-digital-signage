@@ -205,14 +205,19 @@ input[type="button"]:focus {
 		background-image: url(http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg); }
 	#hero5 {
 		background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }*/
+.imgslider {
+	height: 50%;
+}
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 /*
 .mySlides {
 	content:"";
 	width: 100%;
-	min-height: 50%;
-	max-height:50%;
+	height:50%;
 	box-sizing: border-box;
 	text-indent: -9999px;
 	font-size: 0;
