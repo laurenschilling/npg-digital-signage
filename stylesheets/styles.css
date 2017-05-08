@@ -205,14 +205,12 @@ input[type="button"]:focus {
 		background-image: url(http://www.portrait.gov.au/files/f/c/3/f/i9682.jpg); }
 	#hero5 {
 		background-image: url(http://www.portrait.gov.au/files/8/2/d/2/i10008.jpg); }*/
+/*
 .imgslider {
 	height: 50%;
 }
+*/
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 /*
 .mySlides {
 	content:"";
@@ -231,21 +229,12 @@ input[type="button"]:focus {
 */
 
 #carouselDiv {
-	margin-bottom: 5%;
+	margin-bottom: 8%;
 	width: 100%;
 	height: auto;
     overflow: hidden;
     position: relative; }
 
-/*
-	#carousel {
-		left: 0;
-	    top: 0;
-	    height: 100%;
-	    width: 100%;
-	    position: absolute; }
-		
-*/
 		#carousel li {
 			list-style: none; }
 		
@@ -264,7 +253,7 @@ section {
 
 footer {
 	padding: 20px 0;
-	margin-bottom: 10px; }
+	margin-bottom: 5%; }
 
 
 /* Section: Gallery
@@ -392,7 +381,7 @@ canvas {
 			background: #b42b33;
 			cursor: pointer; }
 
-<<<<<<< Updated upstream
+
 
 /* Section: Share
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -401,7 +390,7 @@ canvas {
 	width: 49% !important;
 	height: 400px;
 	margin-bottom: 5%; }
-=======
+
 
 
 /* Help Button WIP bonney 2/5
@@ -449,4 +438,3 @@ canvas {
 /* Show the help stuff menu */
 .show {display:block;}
 
->>>>>>> Stashed changes
