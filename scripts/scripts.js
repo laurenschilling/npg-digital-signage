@@ -49,6 +49,7 @@ var video = $("video")[0];
 var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
 
 window.onload = function(){
+	console.log('here');
     // Load selected portrait from local storage
     var selectedArtPath = "images/crop/" + localStorage.selection + ".jpg";
     $("#artContainer").prepend("<img id='artContainer' src=' " + selectedArtPath + "' />")
@@ -116,7 +117,7 @@ function changeValue() {
   var sepia = $('#filterSepia').val();
   $('#poseImage').css('filter',
   "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
-};
+}
 
 // Back button
 $('.backButton').on('click', function(){
@@ -126,10 +127,15 @@ $('.backButton').on('click', function(){
 //////////////////////////////////////////////////////
 
 // share button
-$('#shareButton').on('click', function(){
-    console.log('yep');
-	var dataURL = canvas.toDataURL();
-	saveImage(dataURL);
+$('.testBtn').on('click', function(){
+	console.log('testbtn click');
+
+	var dataURL = $("#poseImage").attr("src");
+
+	//saveImage(dataURL);
+	console.log(dataURL);
+	localStorage.image = dataURL;
+
 });
 
 function saveImage(dataURL) {
