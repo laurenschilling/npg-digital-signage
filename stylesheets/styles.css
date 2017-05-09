@@ -313,8 +313,10 @@ footer {
 #contentScreen4 {
 	display: none; }
 
+/*
 canvas {
 	display: none; }
+*/
 
 #artContainer {
 	display: inline;
