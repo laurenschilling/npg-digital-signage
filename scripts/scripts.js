@@ -69,7 +69,6 @@ navigator.getUserMedia = navigator.getUserMedia       ||
                         navigator.mozGetUserMedia    ||
                         null;
 
-
 // Use Firefox-specific prefix for getUserMedia
 // navigator.getUserMedia = navigator.mozGetUserMedia;
 
@@ -103,29 +102,28 @@ window.onload = function(){
 
 // Display the user's 'pose' when user clicks the 'Capture' button
 document.getElementById('poseButtonCapture').addEventListener('click', function() {
-  // Pause the video
+  // Pause and hide the video
   video.pause();
-  
-    // Capture video image on canvas
-//  var ctx = $("#canvas")[0].getContext('2d'); //B: moved to createImage fn
-    
+
+  // Capture video image on canvas
+  //  var ctx = $("#canvas")[0].getContext('2d'); //B: moved to createImage fn
+
   canvas.width = video.offsetWidth; // need to set width/height here - css can't do it apparently
   canvas.height = video.offsetHeight;
 
-    //B: run createImage function
-    createImage(video);
+  //B: run createImage function
+  createImage(video);
 
-//    ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height); // B: Moved to createImage fn
-    
-    
-  $('#poseImage').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
-    
+  // ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height); // B: Moved to createImage fn
+
+  // $('#poseImage').attr('src', $("#canvas")[0].toDataURL('image/jpg')); //K: I don't think we're using poseImage anymore?
+
   // hide video + capture button + screen 3 content
   $('#poseVideo').css('display', 'none');
   $('#poseButtonCapture').css('display', 'none');
   $('#contentScreen3').css('display', 'none');
   // Show image + filter buttons + share button + screen 4 content
-  $('#poseImage').css('display', 'block');
+  // $('#poseImage').css('display', 'block'); //K: I don't think we're using poseImage anymore?
   $('.filterButton').css('display', 'block');
   $('#shareButton').css('display', 'block');
   $('#contentScreen4').css('display', 'block');
@@ -153,28 +151,27 @@ function changeValue() {
   var hue = $('#filterHue').val();
   var saturate = $('#filterSaturate').val();
   var sepia = $('#filterSepia').val();
-    
-//B: remove CSS filters - need to update these via the canvas instead   
-//  $('#poseImage').css('filter',
-//  "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
-    
-    
-    //B: Create string of filters to send to updateImage fn
-    var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
-    
-    //when we update a filter, go and update the image via a new function
-    updateImage(filterStr);
-    
+
+  //B: remove CSS filters - need to update these via the canvas instead
+  //  $('#poseImage').css('filter',
+  //  "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
+
+  //B: Create string of filters to send to updateImage fn
+  var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
+  console.log(filterStr);
+  //when we update a filter, go and update the image via a new function
+  updateImage(filterStr);
+
 }
 //B: Suggested improvment: a reset button - to clear all filters so a user can start again
 
 //B: new function to actually draw the captured video to the canvas
 function createImage(video, filterStr) {
     console.log('in createImage function');
-    
+
     //declare canvas element in here
     var ctx = $("#canvas")[0].getContext('2d');
-    
+
     //B: check if we have video string, then create image
     if (video != undefined) {
         console.log('we have video');
@@ -187,46 +184,46 @@ function createImage(video, filterStr) {
 //B: new function to update image when filters are added
 function updateImage(filterStr) {
     console.log('in update image function');
-    
+
     var img = document.getElementById("canvas");
     var ctx = $("#canvas")[0].getContext('2d');
-    
+
     //output filter string to test
     //console.log(filterStr);
-    
+
     //B: Add the filters to the canvas
     ctx.filter = filterStr;
     //B: redraw the image on the canvas
-    ctx.drawImage(img, 0, 0); 
+    ctx.drawImage(img, 0, 0);
 }
 
 // Back button
 $('.backButton').on('click', function(){
     localStorage.clear();
 });
-	
+
 //////////////////////////////////////////////////////
 
 // share button
 $('.testBtn').on('click', function(){
 	console.log('testbtn click');
-            
+
     //B: go get the image again
     var img = document.getElementById("canvas");
-    //B: create a dataURL 
+    //B: create a dataURL
     var dataURL = img.toDataURL('png/jpeg');
-        
+
 	//console.log(dataURL);
     //Put the dataURL in localStorage so we can access it from the next screen
 	localStorage.image = dataURL;
 
     //Suggest you put the call to page 4 here - you can't move on until the dataURL has been saved!
-    
-    
-    //Once the image has been saved then we can go to the next page/process the image 
+
+
+    //Once the image has been saved then we can go to the next page/process the image
     if (localStorage.getItem('image') != null) {
         console.log('item has been saved');
-        
+
         //now lets try save the image
         saveImage();
     }
@@ -234,19 +231,35 @@ $('.testBtn').on('click', function(){
 
 function saveImage() {
     console.log('in saveImage');
+<<<<<<< HEAD
     
     var dataURL = localStorage.getItem('image');
     
     
+=======
+
+    //Grab the dataURL from localStorage
+    var dataURL = localStorage.getItem('image');
+
+    //send it off to the PHP script to convert it to an image
+>>>>>>> origin/master
 	$.ajax({
 	  type: "POST",
 	  url: "save-image.php",
-	  data: { 
+	  data: {
 		 imgBase64: dataURL
 	  }
 	}).done(function(o) {
+<<<<<<< HEAD
 	  console.log('Image has been saved'); 
 	  //once it has been saved then you can go off and do the other things to it
+=======
+	  console.log('saved');
+	  // If you want the file to be visible in the browser
+	  // - please modify the callback in javascript. All you
+	  // need is to return the url to the file, you just saved
+	  // and than put the image in your browser.
+>>>>>>> origin/master
 	});
-	
+
 };
