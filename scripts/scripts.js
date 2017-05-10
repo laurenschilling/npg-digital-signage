@@ -231,18 +231,11 @@ $('.testBtn').on('click', function(){
 
 function saveImage() {
     console.log('in saveImage');
-<<<<<<< HEAD
-    
-    var dataURL = localStorage.getItem('image');
-    
-    
-=======
 
     //Grab the dataURL from localStorage
     var dataURL = localStorage.getItem('image');
 
     //send it off to the PHP script to convert it to an image
->>>>>>> origin/master
 	$.ajax({
 	  type: "POST",
 	  url: "save-image.php",
@@ -250,16 +243,8 @@ function saveImage() {
 		 imgBase64: dataURL
 	  }
 	}).done(function(o) {
-<<<<<<< HEAD
 	  console.log('Image has been saved'); 
 	  //once it has been saved then you can go off and do the other things to it
-=======
-	  console.log('saved');
-	  // If you want the file to be visible in the browser
-	  // - please modify the callback in javascript. All you
-	  // need is to return the url to the file, you just saved
-	  // and than put the image in your browser.
->>>>>>> origin/master
 	});
 
 };
