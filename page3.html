@@ -40,7 +40,7 @@
 	    visibility: hidden;
 	  }
 	</style>
-	
+
 	<!-- Font Awesome
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://use.fontawesome.com/01edb761b1.js"></script>
@@ -95,7 +95,8 @@
 
 				<div id="squarePose" class="six columns">
 					<video id="poseVideo" autoplay></video>
-					<img id="poseImage" src="" />
+					<!-- <img id="poseImage" src="" /> -->
+					<canvas id="canvas"></canvas>
 				</div>
 
 				<!-- Pose filter buttons -->
@@ -111,7 +112,6 @@
 					</div>
 				</div>
 
-				<canvas id="canvas"></canvas> <!-- Never displayed, just used to capture video and create .jpg -->
 			</div>
 
 			<!-- Pose filter ranges -->

@@ -165,7 +165,7 @@ input[type="button"]:focus {
 	a .fa,
 	button .fa {
 		padding-right: 5px; }
-	
+
 #selectPortraitButton {
 	background-color: #5a5a5a;
 	color: #fff;
@@ -181,7 +181,7 @@ input[type="button"]:focus {
 	.pp {
 		width: 20%;
 		margin-right: 7px; }
-	
+
 	.send:last-child,
 	.pp:last-child {
 		margin-right: 0; }
@@ -189,7 +189,7 @@ input[type="button"]:focus {
 .ppButtons {
 	text-align: center;
 	margin-bottom: 5%; }
-	
+
 	.pp {
 		width: 30%; }
 
@@ -237,12 +237,12 @@ input[type="button"]:focus {
 
 		#carousel li {
 			list-style: none; }
-		
+
 			#carousel li img {
 				width:100%;
 				height: auto;
 				overflow: hidden; }
-	
+
 
 
 /* Sections
@@ -264,7 +264,7 @@ footer {
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;  /* Alternate value is "auto" which stops scrolling immediately.
 											See here for more info: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling */
-	overflow-x: hidden; }			
+	overflow-x: hidden; }
 
 	#gallery .four.columns {
 		padding: 0;
@@ -318,6 +318,12 @@ canvas {
 	display: none; }
 */
 
+canvas {
+	transform: rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+	margin-left: -20%;
+}
+
 #artContainer {
 	display: inline;
 	width: 100%; }
@@ -333,11 +339,11 @@ canvas {
 		transform: rotateY(180deg);
 		-moz-transform:rotateY(180deg);	}
 
-    #poseImage {
+    /*#poseImage {
 	    margin-left: -20%;
 	    display: none;
 	    transform: rotateY(180deg);
-		-moz-transform:rotateY(180deg);	}
+		-moz-transform:rotateY(180deg);	}*/
 
 .filterButton {
 	float: right;
@@ -396,7 +402,7 @@ canvas {
 #enterEmail {
 	padding-top: 5%;
 	display: none; }
-	
+
 	#enterEmail label {
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -408,10 +414,10 @@ canvas {
 		letter-spacing: 0.01em;
 		font-size: 1.1em;
 		text-align: center;	}
-		
+
 	#emailInput:focus {
 		border: 1px solid #b42b33; }
-		
+
 
 /* Help Button WIP bonney 2/5
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -451,10 +457,9 @@ canvas {
     padding: 12px 16px;
    /* text-decoration: underline;*/
     display: block;
-	
+
 }
 
 
 /* Show the help stuff menu */
 .show {display:block;}
-
