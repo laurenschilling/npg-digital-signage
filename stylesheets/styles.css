@@ -339,11 +339,11 @@ canvas {
 		transform: rotateY(180deg);
 		-moz-transform:rotateY(180deg);	}
 
-    /*#poseImage {
+    #poseDynamicFilters {
 	    margin-left: -20%;
 	    display: none;
 	    transform: rotateY(180deg);
-		-moz-transform:rotateY(180deg);	}*/
+		-moz-transform:rotateY(180deg);	}
 
 .filterButton {
 	float: right;
