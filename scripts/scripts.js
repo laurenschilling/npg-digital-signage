@@ -159,10 +159,13 @@ function changeValue() {
 
 //B: Suggested improvment: a reset button - to clear all filters so a user can start again
 
+//cw: hide/show functions so that when the user is finished taking their photos the share functions show up
 $('#shareButton').on('click', function(){
   // hide all filter ranges
   $('#sharePortrait').css('display', 'block');
 	$('#shareButton').css('display', 'none');
+	$('#filterButtons').css('display', 'none');
+	$('#filters').css('display', 'none');
 });
 
 
@@ -214,7 +217,8 @@ $('#shareButton').on('click', function() {
   console.log(dataURL);
 
   //Suggest you put the call to page 4 here - you can't move on until the dataURL has been saved!
-  window.location.href = "page4.html";
+	//cw: commented so code on page 3 would work - can revert back if want to move on to 4
+	//window.location.href = "page4.html";
 
   //Once the image has been saved then we can go to the next page/process the image
   if (localStorage.getItem('image') != null) {
