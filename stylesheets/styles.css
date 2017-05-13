@@ -313,11 +313,6 @@ footer {
 #contentScreen4 {
 	display: none; }
 
-/*
-canvas {
-	display: none; }
-*/
-
 canvas {
 	transform: rotateY(180deg);
 	-moz-transform:rotateY(180deg);
@@ -365,6 +360,19 @@ canvas {
 
 	.filterButton:last-child {
 		border-radius: 2px 0 0 2px; }
+
+#filterResetRow {
+	display: none;
+}
+		#filterResetButton {
+			background: gray;
+			text-align: center;
+			padding: 1rem 0;
+			cursor: pointer;
+		}
+				#filterResetButton:hover {
+					background: darkGray;
+				}
 
 #shareButton {
   display: none; }

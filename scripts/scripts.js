@@ -1,20 +1,19 @@
-
 ///////////////////////////////////////////////////////
 // Page 2 "Pick a Portrait"
 ///////////////////////////////////////////////////////
 
 // Select portrait to use
 $('.art').on('click', function(){
-    // Visually highlight the selection and restore previous selection to normal
-    $('.art').css('filter', 'brightness(100%)');
-    $(this).css('filter', 'brightness(30%)');
-    // visually indicate that 'next' button can be clicked
-    $('#selectPortraitButton').css('background-color', '#b42b33');
-    $('#selectPortraitButton').css('opacity', '1');
-    $('#selectPortraitButton').css('color', '#fff');
-    $('#selectPortraitButton').css('cursor', 'pointer');
-    // Store selection
-    localStorage.selection = this.id;
+  // Visually highlight the selection and restore previous selection to normal
+  $('.art').css('filter', 'brightness(100%)');
+  $(this).css('filter', 'brightness(30%)');
+  // visually indicate that 'next' button can be clicked
+  $('#selectPortraitButton').css('background-color', '#b42b33');
+  $('#selectPortraitButton').css('opacity', '1');
+  $('#selectPortraitButton').css('color', '#fff');
+  $('#selectPortraitButton').css('cursor', 'pointer');
+  // Store selection
+  localStorage.selection = this.id;
 });
 
 // Do not let user progress to Page 3 before they make a portrait selection
@@ -31,9 +30,9 @@ $('.four').on('click', function(){
     $(this).find(".imageTextBox").toggleClass("imageTextBox2");
 });
 
-//////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////
 // Page 4: Share Buttons (this wouldn't work at the bottom of the script, so it's been moved up here)
+///////////////////////////////////////////////////////
 
 // When #sendToEmail button is clicked, display form with email input
 $('#sendToEmail').on('click', function(){
@@ -56,27 +55,24 @@ $(document).ready(function(){
    });
 });
 
-//////////////////////////////////////////////////////
-
-
 ///////////////////////////////////////////////////////
-// Page 3 "Match the pose"
+// Page 3 - "Match the pose" Screen
 ///////////////////////////////////////////////////////
 
+// Use browser-specific prefix for retrieving video media
 window.navigator = window.navigator || {};
 navigator.getUserMedia = navigator.getUserMedia       ||
                         navigator.webkitGetUserMedia ||
                         navigator.mozGetUserMedia    ||
                         null;
 
-// Use Firefox-specific prefix for getUserMedia
-// navigator.getUserMedia = navigator.mozGetUserMedia;
-
+// Video Starts playing automatically
 var video = $("video")[0];
 var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
 
-window.onload = function(){
-	console.log('here');
+// Load user's chosen artwork into #artcontainter if #artcontainter is on screen (I.e. if user is on page 3)
+window.onload = function() {
+	if ($('#artContainer')[0] != null) {
     // Load selected portrait from local storage
     var selectedArtPath = "images/crop/" + localStorage.selection + ".jpg";
     $("#artContainer").prepend("<img id='artContainer' src=' " + selectedArtPath + "' />")
@@ -98,40 +94,51 @@ window.onload = function(){
     function(error) {
       console.log('Video capture error: ' + error.code);
     });
+  }
 };
 
-// Display the user's 'pose' when user clicks the 'Capture' button
-document.getElementById('poseButtonCapture').addEventListener('click', function() {
-  // Pause and hide the video
+// 'Take Portrait' button: Display the user's 'pose' when user clicks the button
+$('#poseButtonCapture').on('click', function() {
+  // Pause the video
   video.pause();
-
-  // Capture video image on canvas
-  //  var ctx = $("#canvas")[0].getContext('2d'); //B: moved to createImage fn
-
-  canvas.width = video.offsetWidth; // need to set width/height here - css can't do it apparently
+  // Set canvas width/height
+  canvas.width = video.offsetWidth;
   canvas.height = video.offsetHeight;
-
-  //B: run createImage function
+  // B: run createImage function
   createImage(video);
-
-  // ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height); // B: Moved to createImage fn
-
+  // Capture canvas image on an intermediate image that user can use to try out filters before committing to canvas via updateImage function
   $('#poseDynamicFilters').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
-
-  // hide video + capture button + screen 3 content
+  // HIDE CONTENT: video + capture button + screen 3 content
   $('#poseVideo').css('display', 'none');
   $('#poseButtonCapture').css('display', 'none');
   $('#contentScreen3').css('display', 'none');
-  // Show image + filter buttons + share button + screen 4 content
+  // SHOW CONTENT: image + filter buttons + share button + screen 4 content
   $('#poseDynamicFilters').css('display', 'block');
   $('.filterButton').css('display', 'block');
   $('#shareButton').css('display', 'block');
   $('#contentScreen4').css('display', 'block');
 });
 
+// B: Draw the captured video to the canvas
+function createImage(video, filterStr) {
+  // B: Declare canvas element
+  var ctx = $("#canvas")[0].getContext('2d');
+  // B: check if we have video string, then create image
+  if (video != undefined) {
+    ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height);
+  } else {
+    console.log('No image - from createImage function')
+  };
+};
+
+///////////////////////////////////////////////////////
+// Page 3 - "Add Filters" Screen
+///////////////////////////////////////////////////////
 
 // Display filter range selector when filter button is pushed
-$('.filterButton').on('click', function(){
+$('.filterButton').on('click', function() {
+  // Show reset button
+  $('#filterResetRow').css('display', 'block');
   // visually highlight the selected filter range
   $('.filterButton').css('background-color', 'rgba(0, 0, 0, 0.5)');
   $(this).css('background-color', '#b42b33');
@@ -142,7 +149,7 @@ $('.filterButton').on('click', function(){
   document.getElementById(displayFilter).style.display = 'block';
 });
 
-//Apply filters to Dynamic Image
+// Apply filters to #poseDynamicFilters image everytime the user changes a filter value
 function changeValue() {
   var blur = $('#filterBlur').val();
   var brightness = $('#filterBrightness').val();
@@ -151,117 +158,80 @@ function changeValue() {
   var hue = $('#filterHue').val();
   var saturate = $('#filterSaturate').val();
   var sepia = $('#filterSepia').val();
+  // Use above values to create a filter string
+  $('#poseDynamicFilters').css('filter',
+  "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
+};
 
-   //
-   $('#poseDynamicFilters').css('filter',
-   "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
-}
+// Reset Filters
+$('#filterResetButton').on('click', function() {
+  $('#filterBlur').val("0");
+  $('#filterBrightness').val("100");
+  $('#filterContrast').val("100");
+  $('#filterGrayscale').val("0");
+  $('#filterHue').val("0");
+  $('#filterSaturate').val("100");
+  $('#filterSepia').val("0");
+  $('#poseDynamicFilters').css('filter',
+  'blur(0px) brightness(100%) contrast(100%) grayscale(0%) saturate(100%) sepia(0%) hue-rotate(0deg)');
+});
 
-//B: Suggested improvment: a reset button - to clear all filters so a user can start again
-
-//cw: hide/show functions so that when the user is finished taking their photos the share functions show up
-$('#shareButton').on('click', function(){
-  // hide all filter ranges
+// Share button
+$('#shareButton').on('click', function() {
+  // cw: hide/show functions so that when the user is finished taking their photos the share functions show up
   $('#sharePortrait').css('display', 'block');
 	$('#shareButton').css('display', 'none');
 	$('#filterButtons').css('display', 'none');
 	$('#filters').css('display', 'none');
-});
-
-
-
-//B: new function to actually draw the captured video to the canvas
-function createImage(video, filterStr) {
-    console.log('in createImage function');
-
-    //declare canvas element in here
-    var ctx = $("#canvas")[0].getContext('2d');
-
-    //B: check if we have video string, then create image
-    if (video != undefined) {
-        console.log('we have video');
-        ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height);
-    } else (
-        console.log('no image')
-    )
-}
-
-//////////////////////////////////////////////////////
-
-// share button
-$('#shareButton').on('click', function() {
-    console.log('shareButton click');
-
-    // K: Apply update image with users chosen filters
-        var blur = $('#filterBlur').val();
-        var brightness = $('#filterBrightness').val();
-        var contrast = $('#filterContrast').val();
-        var grayscale = $('#filterGrayscale').val();
-        var hue = $('#filterHue').val();
-        var saturate = $('#filterSaturate').val();
-        var sepia = $('#filterSepia').val();
-        //B: Create string of filters to send to updateImage fn
-        var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
-        // Update the image via a new function
-        updateImage(filterStr);
-
-    //B: go get the image again
-    var img = document.getElementById("canvas");
-    //B: create a dataURL
-    var dataURL = img.toDataURL('png/jpeg');
-
-
-
+  // K: Update canvas with user's chosen filters
+    var blur = $('#filterBlur').val();
+    var brightness = $('#filterBrightness').val();
+    var contrast = $('#filterContrast').val();
+    var grayscale = $('#filterGrayscale').val();
+    var hue = $('#filterHue').val();
+    var saturate = $('#filterSaturate').val();
+    var sepia = $('#filterSepia').val();
+    // B: Create string of filters to send to updateImage fn
+    var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
+    // Update the image
+    updateImage(filterStr);
+  //B: go get the image again
+  var img = document.getElementById("canvas");
+  //B: create a dataURL
+  var dataURL = img.toDataURL('png/jpeg');
   //Put the dataURL in localStorage so we can access it from the next screen
 	localStorage.image = dataURL;
   console.log(dataURL);
-
-  //Suggest you put the call to page 4 here - you can't move on until the dataURL has been saved!
-	//cw: commented so code on page 3 would work - can revert back if want to move on to 4
-	//window.location.href = "page4.html";
-
+  // If we end up using Page 4, put the call to page 4 here - you can't move on until the dataURL has been saved!
+	  // window.location.href = "page4.html";
   //Once the image has been saved then we can go to the next page/process the image
   if (localStorage.getItem('image') != null) {
-      console.log('item has been saved');
-
-      //now lets try save the image
-      saveImage();
-  }
+    saveImage();
+  };
 });
 
-//B: new function to update image when filters are added
+// B: Update the filters that are applied to the canvas
 function updateImage(filterStr) {
-    console.log('in update image function');
+  var img = document.getElementById("canvas");
+  var ctx = $("#canvas")[0].getContext('2d');
+  // B: Add the filters to the canvas
+  ctx.filter = filterStr;
+  // B: redraw the image on the canvas
+  ctx.drawImage(img, 0, 0);
+  console.log("Image updated with: " + filterStr)
+};
 
-    var img = document.getElementById("canvas");
-    var ctx = $("#canvas")[0].getContext('2d');
-
-    //output filter string to test
-    //console.log(filterStr);
-
-    //B: Add the filters to the canvas
-    ctx.filter = filterStr;
-    //B: redraw the image on the canvas
-    ctx.drawImage(img, 0, 0);
-    console.log("image updated with: " + filterStr)
-}
-
+// Save image
 function saveImage() {
-    console.log('in saveImage');
-
-    //Grab the dataURL from localStorage
-    var dataURL = localStorage.getItem('image');
-
-    //send it off to the PHP script to convert it to an image
+  //Grab the dataURL from localStorage
+  var dataURL = localStorage.getItem('image');
+  //send it off to the PHP script to convert it to an image
 	$.ajax({
 	  type: "POST",
 	  url: "save-image.php",
-	  data: {
-		 imgBase64: dataURL
-	  }
+	  data: {imgBase64: dataURL}
 	}).done(function(o) {
 	  console.log('Image has been saved');
-	  //once it has been saved then you can go off and do the other things to it
+	  // Once it has been saved then you can go off and do the other things to it
 	});
-
 };
