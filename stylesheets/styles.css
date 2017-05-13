@@ -344,6 +344,18 @@ canvas {
 	    transform: rotateY(180deg);
 		-moz-transform:rotateY(180deg);	}
 
+#cameraCountdown {
+	height: 3rem;
+}
+#cameraCountdown1,
+#cameraCountdown2,
+#cameraCountdown3,
+#cameraCountdownPose {
+	text-align: center;
+	font-size: 3em;
+	display: none;
+}
+
 .filterButton {
 	float: right;
 	width: 14.15%;
