@@ -348,14 +348,42 @@ canvas {
 #cameraCountdown {
 	height: 3rem;
 }
-#cameraCountdown1,
-#cameraCountdown2,
-#cameraCountdown3,
-#cameraCountdownPose {
-	text-align: center;
-	font-size: 3em;
+		#cameraCountdown1,
+		#cameraCountdown2,
+		#cameraCountdown3,
+		#cameraCountdownPose {
+			text-align: center;
+			font-size: 3em;
+			display: none;
+		}
+#retakePhoto {
 	display: none;
+	padding-left: 1%;
 }
+		#retakePhotoButton,
+		#acceptPhotoButton {
+			color: #fff;
+			font-size: .9em;
+			font-weight: 400;
+			letter-spacing: .1rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			white-space: nowrap;
+			background-color: #b42b33;
+			border-radius: 2px;
+			cursor: pointer;
+			outline: 0;
+			border: 0;
+			text-align: center;
+			padding: 1rem 0;
+		}
+		#acceptPhotoButton {
+			float: right;
+		}
+		#retakePhotoButton:hover,
+		#acceptPhotoButton:hover {
+			background-color: rgba(181, 43, 52, 0.85);
+		}
 
 .filterButton {
 	float: right;

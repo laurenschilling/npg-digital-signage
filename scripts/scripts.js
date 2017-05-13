@@ -99,6 +99,8 @@ window.onload = function() {
 
 // 'Take Portrait' button: Display the user's 'pose' when user clicks the button
 $('#poseButtonCapture').on('click', function() {
+  // Hide button
+  $('#poseButtonCapture').css('display', 'none');
   //Start count down
   $('#cameraCountdown3').css('display', 'block');
   $('#cameraCountdown3').fadeOut(1500, function() {
@@ -115,18 +117,70 @@ $('#poseButtonCapture').on('click', function() {
         createImage(video);
         // Capture canvas image on an intermediate image that user can use to try out filters before committing to canvas via updateImage function
         $('#poseDynamicFilters').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
-        // HIDE CONTENT: video + capture button + screen 3 content
+        // HIDE CONTENT: video + screen 3 content
         $('#poseVideo').css('display', 'none');
-        $('#poseButtonCapture').css('display', 'none');
-        $('#contentScreen3').css('display', 'none');
-        // SHOW CONTENT: image + filter buttons + share button + screen 4 content
-        $('#poseDynamicFilters').css('display', 'block');
-        $('.filterButton').css('display', 'block');
-        $('#shareButton').css('display', 'block');
-        $('#contentScreen4').css('display', 'block');
+        //SHOW CONTENT: Options to retake or accept the photo
+        $('#retakePhoto').css('display', 'block');
       });
     });
   });
+});
+
+// Retake photo
+$('#retakePhotoButton').on('click', function() {
+  // Restart video
+    $('#poseVideo').css('display', 'block');
+    // Capture user's video source
+    navigator.getUserMedia({
+      video: true,
+    },
+    // Stream the data
+    function(stream) {
+      var videoStream = stream;
+      video.src = createSrc(stream);
+      video.play();
+    },
+    function(error) {
+      console.log('Video capture error: ' + error.code);
+    });
+  // Hide buttons
+  $('#retakePhoto').css('display', 'none');
+  //Start count down
+  $('#cameraCountdown3').css('display', 'block');
+  $('#cameraCountdown3').fadeOut(1500, function() {
+    $('#cameraCountdown2').css('display', 'block');
+    $('#cameraCountdown2').fadeOut(1500, function() {
+      $('#cameraCountdown1').css('display', 'block');
+      $('#cameraCountdown1').fadeOut(1500, function() {
+        // Pause the video
+        video.pause();
+        // Set canvas width/height
+        canvas.width = video.offsetWidth;
+        canvas.height = video.offsetHeight;
+        // B: run createImage function
+        createImage(video);
+        // Capture canvas image on an intermediate image that user can use to try out filters before committing to canvas via updateImage function
+        $('#poseDynamicFilters').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
+        // HIDE CONTENT: video + screen 3 content
+        $('#poseVideo').css('display', 'none');
+        //SHOW CONTENT: Options to retake or accept the photo
+        $('#retakePhoto').css('display', 'block');
+      });
+    });
+  });
+});
+
+// Accept Photo
+$('#acceptPhotoButton').on('click', function() {
+  // HIDE CONTENT: video + screen 3 content
+  $('#poseVideo').css('display', 'none');
+  $('#contentScreen3').css('display', 'none');
+  $('#retakePhoto').css('display', 'none');
+  // SHOW CONTENT: image + filter buttons + share button + screen 4 content
+  $('#poseDynamicFilters').css('display', 'block');
+  $('.filterButton').css('display', 'block');
+  $('#shareButton').css('display', 'block');
+  $('#contentScreen4').css('display', 'block');
 });
 
 // B: Draw the captured video to the canvas
