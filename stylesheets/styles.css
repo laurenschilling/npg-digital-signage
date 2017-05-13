@@ -328,6 +328,10 @@ canvas {
 	display: inline;
 	width: 100%; }
 
+#yourImage {
+	display: inline;
+	width: 100%; }
+
 #squarePose {
 	width: 47.5%;
 	float: right;
@@ -339,11 +343,11 @@ canvas {
 		transform: rotateY(180deg);
 		-moz-transform:rotateY(180deg);	}
 
-    /*#poseImage {
+    #poseDynamicFilters {
 	    margin-left: -20%;
 	    display: none;
 	    transform: rotateY(180deg);
-		-moz-transform:rotateY(180deg);	}*/
+		-moz-transform:rotateY(180deg);	}
 
 .filterButton {
 	float: right;
@@ -393,8 +397,12 @@ canvas {
 
 /* Section: Share
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#sharePortrait {
+	display:none;
+}
+
 .placeholder {
-	background-color: rgba(0, 0, 0, .8);
+	/*background-color: rgba(0, 0, 0, .8);*/
 	width: 49% !important;
 	height: 400px;
 	margin-bottom: 5%; }

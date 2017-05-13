@@ -116,14 +116,14 @@ document.getElementById('poseButtonCapture').addEventListener('click', function(
 
   // ctx.drawImage(video, 0, 0, $("#canvas")[0].width, $("#canvas")[0].height); // B: Moved to createImage fn
 
-  // $('#poseImage').attr('src', $("#canvas")[0].toDataURL('image/jpg')); //K: I don't think we're using poseImage anymore?
+  $('#poseDynamicFilters').attr('src', $("#canvas")[0].toDataURL('image/jpg'));
 
   // hide video + capture button + screen 3 content
   $('#poseVideo').css('display', 'none');
   $('#poseButtonCapture').css('display', 'none');
   $('#contentScreen3').css('display', 'none');
   // Show image + filter buttons + share button + screen 4 content
-  // $('#poseImage').css('display', 'block'); //K: I don't think we're using poseImage anymore?
+  $('#poseDynamicFilters').css('display', 'block');
   $('.filterButton').css('display', 'block');
   $('#shareButton').css('display', 'block');
   $('#contentScreen4').css('display', 'block');
@@ -142,7 +142,7 @@ $('.filterButton').on('click', function(){
   document.getElementById(displayFilter).style.display = 'block';
 });
 
-//Apply filters
+//Apply filters to Dynamic Image
 function changeValue() {
   var blur = $('#filterBlur').val();
   var brightness = $('#filterBrightness').val();
@@ -152,18 +152,20 @@ function changeValue() {
   var saturate = $('#filterSaturate').val();
   var sepia = $('#filterSepia').val();
 
-  //B: remove CSS filters - need to update these via the canvas instead
-  //  $('#poseImage').css('filter',
-  //  "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
-
-  //B: Create string of filters to send to updateImage fn
-  var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
-  console.log(filterStr);
-  //when we update a filter, go and update the image via a new function
-  updateImage(filterStr);
-
+   //
+   $('#poseDynamicFilters').css('filter',
+   "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)");
 }
+
 //B: Suggested improvment: a reset button - to clear all filters so a user can start again
+
+$('#shareButton').on('click', function(){
+  // hide all filter ranges
+  $('#sharePortrait').css('display', 'block');
+	$('#shareButton').css('display', 'none');
+});
+
+
 
 //B: new function to actually draw the captured video to the canvas
 function createImage(video, filterStr) {
@@ -181,6 +183,48 @@ function createImage(video, filterStr) {
     )
 }
 
+//////////////////////////////////////////////////////
+
+// share button
+$('#shareButton').on('click', function() {
+    console.log('shareButton click');
+
+    // K: Apply update image with users chosen filters
+        var blur = $('#filterBlur').val();
+        var brightness = $('#filterBrightness').val();
+        var contrast = $('#filterContrast').val();
+        var grayscale = $('#filterGrayscale').val();
+        var hue = $('#filterHue').val();
+        var saturate = $('#filterSaturate').val();
+        var sepia = $('#filterSepia').val();
+        //B: Create string of filters to send to updateImage fn
+        var filterStr = "blur(" + blur + "px) brightness(" + brightness + "%) contrast(" + contrast + "%) grayscale(" + grayscale + "%) saturate(" + saturate + "%) sepia(" + sepia + "%) hue-rotate(" + hue + "deg)";
+        // Update the image via a new function
+        updateImage(filterStr);
+
+    //B: go get the image again
+    var img = document.getElementById("canvas");
+    //B: create a dataURL
+    var dataURL = img.toDataURL('png/jpeg');
+
+
+
+  //Put the dataURL in localStorage so we can access it from the next screen
+	localStorage.image = dataURL;
+  console.log(dataURL);
+
+  //Suggest you put the call to page 4 here - you can't move on until the dataURL has been saved!
+  window.location.href = "page4.html";
+
+  //Once the image has been saved then we can go to the next page/process the image
+  if (localStorage.getItem('image') != null) {
+      console.log('item has been saved');
+
+      //now lets try save the image
+      saveImage();
+  }
+});
+
 //B: new function to update image when filters are added
 function updateImage(filterStr) {
     console.log('in update image function');
@@ -195,39 +239,8 @@ function updateImage(filterStr) {
     ctx.filter = filterStr;
     //B: redraw the image on the canvas
     ctx.drawImage(img, 0, 0);
+    console.log("image updated with: " + filterStr)
 }
-
-// Back button
-$('.backButton').on('click', function(){
-    localStorage.clear();
-});
-
-//////////////////////////////////////////////////////
-
-// share button
-$('.testBtn').on('click', function(){
-	console.log('testbtn click');
-
-    //B: go get the image again
-    var img = document.getElementById("canvas");
-    //B: create a dataURL
-    var dataURL = img.toDataURL('png/jpeg');
-
-	//console.log(dataURL);
-    //Put the dataURL in localStorage so we can access it from the next screen
-	localStorage.image = dataURL;
-
-    //Suggest you put the call to page 4 here - you can't move on until the dataURL has been saved!
-
-
-    //Once the image has been saved then we can go to the next page/process the image
-    if (localStorage.getItem('image') != null) {
-        console.log('item has been saved');
-
-        //now lets try save the image
-        saveImage();
-    }
-});
 
 function saveImage() {
     console.log('in saveImage');
@@ -243,7 +256,7 @@ function saveImage() {
 		 imgBase64: dataURL
 	  }
 	}).done(function(o) {
-	  console.log('Image has been saved'); 
+	  console.log('Image has been saved');
 	  //once it has been saved then you can go off and do the other things to it
 	});
 
