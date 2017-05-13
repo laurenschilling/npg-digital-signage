@@ -159,6 +159,13 @@ function changeValue() {
 
 //B: Suggested improvment: a reset button - to clear all filters so a user can start again
 
+$('#shareButton').on('click', function(){
+  // hide all filter ranges
+  $('#sharePortrait').css('display', 'block');
+	$('#shareButton').css('display', 'none');
+});
+
+
 
 //B: new function to actually draw the captured video to the canvas
 function createImage(video, filterStr) {
