@@ -165,6 +165,7 @@ function changeValue() {
 }
 //B: Suggested improvment: a reset button - to clear all filters so a user can start again
 
+
 //B: new function to actually draw the captured video to the canvas
 function createImage(video, filterStr) {
     console.log('in createImage function');
@@ -248,3 +249,14 @@ function saveImage() {
 	});
 
 };
+
+
+
+
+
+
+
+
+
+
+
