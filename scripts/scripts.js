@@ -34,15 +34,33 @@ $('.four').on('click', function(){
 // Page 4: Share Buttons (this wouldn't work at the bottom of the script, so it's been moved up here)
 ///////////////////////////////////////////////////////
 
-// When #sendToEmail button is clicked, display form with email input
-$('#sendToEmail').on('click', function(){
-	$('#enterEmail').css('display', 'block');
-});
+// When #sendToEmail oor #sendToPhone button is clicked, display form with appropriate input
+
+	// Email
+	$('#sendToEmail').on('click', function(){
+		$('#enterPhone').css('display', 'none');
+		$('#enterEmail').css('display', 'block');
+	});
+	
+	// Phone
+	$('#sendToPhone').on('click', function(){
+		$('#enterEmail').css('display', 'none');	
+		$('#enterPhone').css('display', 'block');
+	});
 
 // When submit is clicked, display successful message (this doesn't actually determine whether it's a success or not, as we're not actually emailing the recipient in this prototype
-$('#submit').on('click', function(){
-	$('#submit').attr('value', 'Email sent!');
-});
+	
+	// Email
+	$('#submitEmail').on('click', function(){
+			// Email validation code goes here
+			$('#submitEmail').attr('value', 'Email sent!'); 
+	});
+	
+	// Phone
+	$('#submitPhone').on('click', function(){		
+			// Phone number validation code goes here
+			$('#submitPhone').attr('value', 'Text sent!'); 
+	});
 
 // This doesn't actually send the email anywhere, it just prevents the page from reloading
 $(document).ready(function(){

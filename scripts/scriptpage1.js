@@ -291,7 +291,7 @@ function carousel() {
 				// Build a canvas autopilot timer
 				if(canvasSupported)
 				{
-					$(obj).append('<canvas id="ic_canvas_'+randID+'" width="30" height="30" style="position:absolute;top:0;right:0;"></canvas>');
+					$(obj).append('<canvas id="ic_canvas_'+randID+'" width="30" height="30" style="top:0;right:0;"></canvas>');
 					var ctx = $('#ic_canvas_'+randID)[0].getContext('2d'); //var ctx = $('canvas')[0].getContext('2d');
 					ctx.lineWidth = 3;
 					ctx.strokeStyle = "rgba("+o.progressRingColorOpacity+")";
@@ -300,7 +300,7 @@ function carousel() {
 					ctx.shadowBlur = 3;
 					ctx.shadowColor = "#fff";
 					if(!o.displayProgressRing) $('#ic_canvas_'+randID).hide();
-				} else { $(obj).append('<div id="ic_ie_timer_'+randID+'" style="width:100%;height:6px;position:absolute;bottom:0;left:0;background:#ccc"></div>');$('#ic_ie_timer_'+randID).css('opacity','.25') }
+				} else { $(obj).append('<div id="ic_ie_timer_'+randID+'" style="width:100%;height:6px;bottom:0;left:0;background:#ccc"></div>');$('#ic_ie_timer_'+randID).css('opacity','.25') }
 				function hideCaptions()
 				{
 					if(o.autoHideCaptions) $('.ic_caption',obj).stop().animate({bottom:-heightSource+'px'});

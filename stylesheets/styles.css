@@ -188,7 +188,7 @@ input[type="button"]:focus {
 
 .ppButtons {
 	text-align: center;
-	margin-bottom: 5%; }
+	margin-bottom: -1%; }
 
 	.pp {
 		width: 30%; }
@@ -346,19 +346,25 @@ canvas {
 		-moz-transform:rotateY(180deg);	}
 
 #cameraCountdown {
-	height: 3rem;
+	height: 12rem;
+	position: absolute;
+	top: 425px;
+	z-index: 15;
 }
 		#cameraCountdown1,
 		#cameraCountdown2,
 		#cameraCountdown3,
 		#cameraCountdownPose {
 			text-align: center;
-			font-size: 3em;
+			font-size: 12em;
 			display: none;
+			font-weight: 900;
+			padding-left: 12px;
 		}
 #retakePhoto {
 	display: none;
 	padding-left: 1%;
+	margin-top: 1.5%;
 }
 		#retakePhotoButton,
 		#acceptPhotoButton {
@@ -406,13 +412,17 @@ canvas {
 	display: none;
 }
 		#filterResetButton {
-			background: gray;
+			background: rgba(0,0,0,.2);
 			text-align: center;
 			padding: 1rem 0;
 			cursor: pointer;
+			letter-spacing: 0.05em;
+			font-size: 0.90em;
+			text-transform: uppercase;
+			border-radius: 2px;
 		}
 				#filterResetButton:hover {
-					background: darkGray;
+					background: rgba(0, 0, 0, .5);
 				}
 
 #shareButton {
@@ -427,7 +437,8 @@ canvas {
 		display: none; }
 
 		input[type=range] {
-			width: 99%; }
+			width: 99%;
+			margin-bottom: 0; }
 
 		input[type=range]::-moz-range-track {
 			height: 1px;
@@ -456,23 +467,28 @@ canvas {
 	height: 400px;
 	margin-bottom: 5%; }
 
-#enterEmail {
+#enterEmail,
+#enterPhone {
 	padding-top: 5%;
-	display: none; }
+	display: none;
+	margin-bottom: 5rem; }
 
-	#enterEmail label {
+	#enterEmail label,
+	#enterPhone label {
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		font-weight: 400;
 		text-align: center; }
 
-	#emailInput {
+	#emailInput,
+	#phoneInput {
 		color: #232323;
 		letter-spacing: 0.01em;
 		font-size: 1.1em;
 		text-align: center;	}
 
-	#emailInput:focus {
+	#emailInput:focus,
+	#phoneInput:focus {
 		border: 1px solid #b42b33; }
 
 

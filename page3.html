@@ -21,6 +21,7 @@
 	<!-- CSS
 	––––––––––––––––––––––––----------–––––––––––––––- -->
  	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+ 	<link rel="stylesheet" type="text/css" href="stylesheets/onScreenKeyboard.css">
 
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -119,25 +120,28 @@
 				</div>
 
 				<!-- Pose filter buttons -->
-				<div class="row" id="filterButtons">
-					<div class="offset-by-six six columns" id="filterButtonsRow">
-						<div class="filterButton" data-filterType="filterBlurWrap">Blur</div>
-						<div class="filterButton" data-filterType="filterBrightnessWrap">Brightness</div>
-						<div class="filterButton" data-filterType="filterContrastWrap">Contrast</div>
-						<div class="filterButton" data-filterType="filterGrayscaleWrap">Grayscale</div>
-						<div class="filterButton" data-filterType="filterHueWrap">Hue</div>
-						<div class="filterButton" data-filterType="filterSaturateWrap">Saturate</div>
-						<div class="filterButton" data-filterType="filterSepiaWrap">Sepia</div>
+				<div class="row">
+					<div id="filterButtons">
+						<div class="offset-by-six six columns" id="filterButtonsRow">
+							<div class="filterButton" data-filterType="filterBlurWrap">Blur</div>
+							<div class="filterButton" data-filterType="filterBrightnessWrap">Brightness</div>
+							<div class="filterButton" data-filterType="filterContrastWrap">Contrast</div>
+							<div class="filterButton" data-filterType="filterGrayscaleWrap">Grayscale</div>
+							<div class="filterButton" data-filterType="filterHueWrap">Hue</div>
+							<div class="filterButton" data-filterType="filterSaturateWrap">Saturate</div>
+							<div class="filterButton" data-filterType="filterSepiaWrap">Sepia</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
 			<!-- Reset filter button -->
+<!--
 			<div class="row" id="filterResetRow">
 				<div class="offset-by-eight two columns" id="filterResetButton">
 					Reset all Filters
 				</div>
 			</div>
+-->
 
 			<!-- Pose filter ranges -->
 			<div class="row" id="filters">
@@ -172,8 +176,8 @@
 
 			<!-- Reset filter button -->
 			<div class="row" id="filterResetRow">
-				<div class="offset-by-eight two columns" id="filterResetButton">
-					Reset all Filters
+				<div class="offset-by-ten two columns" id="filterResetButton">
+					Reset Filters
 				</div>
 			</div>
 
@@ -185,13 +189,13 @@
 		<footer>
 			<div class="twelve columns">
 				<!-- next button -->
-				<button id="poseButtonCapture" class="button">Take Portrait in 3... 2... 1...</button>
+				<button id="poseButtonCapture" class="button">Take Your Portrait in 3... 2... 1...</button>
 
 				<!-- <p class="testBtn">Test </p> -->
 				<!-- <a class="button" id="shareButton">Share Your Portrait</a> -->
 
 				<!--<a class="button" id="shareButton" href="page4.html">Share Your Portrait</a>-->
-				<a class="button" id="shareButton">Finished! Share Your Portrait</a>
+				<a class="button" id="shareButton">It's Finished! Share Your Portrait</a>
 
 			</div>
 
@@ -218,7 +222,18 @@
 					<div class="offset-by-three six columns">
 						<label for="emailInput">Enter your email:</label>
 						<input class="u-full-width" type="email" id="emailInput">
-						<input class="u-full-width" type="submit" id="submit" value="Send my portrait!">
+						<input class="u-full-width" type="submit" id="submitEmail" value="Send my portrait!">
+					</div>
+				</div>
+			</form>
+			
+			<!-- Form to enter phone number -->
+			<form id="enterPhone">
+				<div class="row">
+					<div class="offset-by-three six columns">
+						<label for="phoneInput">Enter your mobile:</label>
+						<input class="u-full-width" type="tel" id="phoneInput">
+						<input class="u-full-width" type="submit" id="submitPhone" value="Send my portrait!">
 					</div>
 				</div>
 			</form>
@@ -245,6 +260,10 @@
 
 	<script src="scripts/jquery-3.2.0.js"></script>
 	<script src="scripts/scripts.js"></script>
+	<script src="scripts/jquery.onScreenKeyboard.min.js"></script>
+	<script>
+		$('#phoneInput, #emailInput').onScreenKeyboard({});
+	</script>
 
 </body>
 </html>
