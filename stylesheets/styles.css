@@ -310,7 +310,8 @@ footer {
 /* Section: Match the Pose
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-#contentScreen4 {
+#contentScreen4,
+#contentScreen5 {
 	display: none; }
 
 canvas {

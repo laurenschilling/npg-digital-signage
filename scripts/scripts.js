@@ -145,7 +145,7 @@ function createImage(video, filterStr) {
 // Page 3 - "Add Filters" Screen
 ///////////////////////////////////////////////////////
 
-// Display filter range selector when filter button is pushed
+// Display filter range selector and reset button when filter button is pushed
 $('.filterButton').on('click', function() {
   // Show reset button
   $('#filterResetRow').css('display', 'block');
@@ -193,6 +193,9 @@ $('#shareButton').on('click', function() {
 	$('#shareButton').css('display', 'none');
 	$('#filterButtons').css('display', 'none');
 	$('#filters').css('display', 'none');
+  $('#filterResetRow').css('display', 'none');
+  $('#contentScreen4').css('display', 'none');
+  $('#contentScreen5').css('display', 'block');
   // K: Update canvas with user's chosen filters
     var blur = $('#filterBlur').val();
     var brightness = $('#filterBrightness').val();
