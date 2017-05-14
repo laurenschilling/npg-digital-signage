@@ -49,8 +49,7 @@
 
 <body>
 
-	<div class="container">
-
+<div class="container">
 		<!-- Pick a Portrait Intro -->
 		<div class="row">
 			<div class="twelve columns">
@@ -83,9 +82,20 @@
 					<p>Tap a portrait below that you'd like to recreate. When you're ready, tap select! </p>
 				</div>
 			</div>
+            <br>
+            <!-- protip/help button --> 
+             <div class="dropdown">
+                    <button  class="helpbtn" onclick="giveHelp()"><i class="fa fa-plus-square"></i>ProTip
+                    <div id="myHelpbtn" class="help-content"> <h6>
+                               This will be a tip or help info   </h6> 
+                        </div>  </button></div><br>
+            
+            
 
 		<!-- Gallery for Portrait Mosaic -->
-		<section id="gallery"> <!-- The images are contained within this section, which is set to overflow: scroll -->
+        <div id="container1">
+        
+        <section id="gallery"> <!-- The images are contained within this section, which is set to overflow: scroll -->
 
 			<!-- images linked from gallery- WIP add info when clicked Bon 19/4 -->
 	
@@ -413,14 +423,14 @@
 				
 			</div> <!-- end row 9 -->
 
-		</section> <!-- end #gallery -->
-		
+		</section> <!-- end #gallery --></div>
+	
 		<!-- Footer -->
 		<footer>
 			<div class="twelve columns">
 				<!-- next button -->
-				<a id="selectPortraitButton" class="button" href="page3.html">I want to select this portrait</a>
-			</div>
+				<a id="selectPortraitButton" class="button"  href="page3.html">I want to select this portrait</a>
+
 		</footer>
 
 	</div> <!-- end .container -->
