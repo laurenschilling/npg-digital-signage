@@ -77,20 +77,20 @@
 				<div class="twelve columns"  id="contentScreen3">
 					<h2 class="title">Match the Pose</h2>
 					<p>Strike a pose and recreate the portrait below.</p>
-                    
+
                     <br>
                     <div class="dropdown">
 	                    <button  class="helpbtn" onclick="giveHelp()"><i class="fa fa-plus-square"></i>ProTip
-		                    <div id="myHelpbtn" class="help-content"> 
+		                    <div id="myHelpbtn" class="help-content">
 			                    <h6>
 		                            Stand back and give yourself some room! <br>
-		                            Try to match the portrait’s pose and facial expression. 
-		                        </h6> 
-		                    </div>  
+		                            Try to match the portrait’s pose and facial expression.
+		                        </h6>
+		                    </div>
 	                   </button>
                    </div>
-                    
-                    
+
+
 				</div>
 				<div class="twelve columns" id="contentScreen4">
 					<h2 class="title">Add Filters</h2>
@@ -109,19 +109,18 @@
 			<!-- Portrait / Camera Viewer / Photo to edit -->
 			<div class="row">
 				<div class="six columns">
-					<img id="artContainer" alt=""/>
+					<div id="artContainer"></div>
 				</div>
 
 				<div id="squarePose" class="six columns">
 					<video id="poseVideo" autoplay></video>
-					<img id="poseDynamicFilters" src="" />
+					<img id="poseDynamicFilters" src="images/placeholder.png" alt="Your Portrait Play" />
 					<canvas id="canvas"></canvas>
 				</div>
 				<div class="offset-by-six six columns" id="cameraCountdown">
 					<div id="cameraCountdown3">3</div>
 					<div id="cameraCountdown2">2</div>
 					<div id="cameraCountdown1">1</div>
-					<div id="cameraCountdownPose">Pose!</div>
 				</div>
 				<!-- Retake Photo button -->
 				<div class="row offset-by-six six columns" id="retakePhoto">
@@ -241,7 +240,7 @@
 					</div>
 				</div>
 			</form>
-			
+
 			<!-- Form to enter phone number -->
 			<form id="enterPhone">
 				<div class="row">

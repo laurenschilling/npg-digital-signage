@@ -41,25 +41,25 @@ $('.four').on('click', function(){
 		$('#enterPhone').css('display', 'none');
 		$('#enterEmail').css('display', 'block');
 	});
-	
+
 	// Phone
 	$('#sendToPhone').on('click', function(){
-		$('#enterEmail').css('display', 'none');	
+		$('#enterEmail').css('display', 'none');
 		$('#enterPhone').css('display', 'block');
 	});
 
 // When submit is clicked, display successful message (this doesn't actually determine whether it's a success or not, as we're not actually emailing the recipient in this prototype
-	
+
 	// Email
 	$('#submitEmail').on('click', function(){
 			// Email validation code goes here
-			$('#submitEmail').attr('value', 'Email sent!'); 
+			$('#submitEmail').attr('value', 'Email sent!');
 	});
-	
+
 	// Phone
-	$('#submitPhone').on('click', function(){		
+	$('#submitPhone').on('click', function(){
 			// Phone number validation code goes here
-			$('#submitPhone').attr('value', 'Text sent!'); 
+			$('#submitPhone').attr('value', 'Text sent!');
 	});
 
 // This doesn't actually send the email anywhere, it just prevents the page from reloading
@@ -93,7 +93,7 @@ window.onload = function() {
 	if ($('#artContainer')[0] != null) {
     // Load selected portrait from local storage
     var selectedArtPath = "images/crop/" + localStorage.selection + ".jpg";
-    $("#artContainer").prepend("<img id='artContainer' src=' " + selectedArtPath + "' />")
+    $("#artContainer").prepend("<img id='artContainerAdd' src=' " + selectedArtPath + "' alt='Your NPG portrait choice' />")
     // Make portrait and pose images square
     // Width is set by css and then height is set here to equal that width
     var squareSide = $('#artContainer')[0].offsetWidth;
@@ -324,7 +324,7 @@ function saveImage() {
 
 //help button WIP bonney
 
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function giveHelp() {
     document.getElementById("myHelpbtn").classList.toggle("show");
